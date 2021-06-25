@@ -149,11 +149,34 @@ async def ping(e):
 
 
 @idk.on(events.NewMessage(incoming=True, pattern=".restart"))
+@ydk.on(events.NewMessage(incoming=True, pattern=".restart"))
+@wdk.on(events.NewMessage(incoming=True, pattern=".restart"))
+@hdk.on(events.NewMessage(incoming=True, pattern=".restart"))
+@sdk.on(events.NewMessage(incoming=True, pattern=".restart"))
 async def restart(e):
     if e.sender_id in SUDO:
         text = "RESTARTED, CHECK ME AFTER 2 MINUTES"
         await e.reply(text, parse_mode=None, link_preview=None )
-        await idk.disconnect()
+        try:
+            idk.disconnect()
+        except Exception as e:
+            pass
+        try:
+            ydk.disconnect()
+        except Exception as e:
+            pass
+        try:
+            wdk.disconnect()
+        except Exception as e:
+            pass
+        try:
+            hdk.disconnect()
+        except Exception as e:
+            pass
+        try:
+            sdk.disconnect()
+        except Exception as e:
+            pass
         os.execl(sys.executable, sys.executable, *sys.argv)
         quit()
 
