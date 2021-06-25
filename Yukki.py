@@ -24,6 +24,7 @@ if smex:
         print("Booting Up The Client 1")
         idk.start()
     except Exception as e:
+        idk = 1
         print(e)
         pass
 else:
@@ -38,6 +39,7 @@ if smexx:
         print("Booting Up The Client 2")
         ydk.start()
     except Exception as e:
+        
         print(e)
         pass
 else:
@@ -158,23 +160,23 @@ async def restart(e):
         text = "RESTARTED, CHECK ME AFTER 2 MINUTES"
         await e.reply(text, parse_mode=None, link_preview=None )
         try:
-            idk.disconnect()
+            await idk.disconnect()
         except Exception as e:
             pass
         try:
-            ydk.disconnect()
+            await ydk.disconnect()
         except Exception as e:
             pass
         try:
-            wdk.disconnect()
+            await wdk.disconnect()
         except Exception as e:
             pass
         try:
-            hdk.disconnect()
+            await hdk.disconnect()
         except Exception as e:
             pass
         try:
-            sdk.disconnect()
+            await sdk.disconnect()
         except Exception as e:
             pass
         os.execl(sys.executable, sys.executable, *sys.argv)
