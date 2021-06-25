@@ -29,6 +29,7 @@ if smex:
         pass
 else:
     print("Session 1 not Found")
+    idk = 1
     pass
    
 if smexx:
