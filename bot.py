@@ -9,14 +9,14 @@ from Config import STRING, SUDO, BIO_MESSAGE, API_ID, API_HASH, STRING2, STRING3
 import asyncio
 a = API_ID
 b = API_HASH
-c = STRING
-d = STRING2
-e = STRING3
-f = STRING4
-g = STRING5
+smex = STRING
+smexx = STRING2
+smexxx = STRING3
+smexxxx = STRING4
+smexxxxx = STRING5
 
-if c:
-    session_name = str(c)
+if smex:
+    session_name = str(smex)
     print("String 1 Found")
     idk = TelegramClient(StringSession(session_name), a, b)
     try:
@@ -29,8 +29,8 @@ else:
     print("Session 1 not Found")
     pass
    
-if d:
-    session_name = str(d)
+if smexx:
+    session_name = str(smexx)
     print("String 2 Found")
     ydk = TelegramClient(StringSession(session_name), a, b)
     try:
@@ -43,8 +43,8 @@ else:
     print("Session 2 not Found")
     pass
 
-if e:
-    session_name = str(e)
+if smexxx:
+    session_name = str(smexxx)
     print("String 3 Found")
     wdk = TelegramClient(StringSession(session_name), a, b)
     try:
@@ -57,8 +57,8 @@ else:
     print("Session 3 not Found")
     pass
 
-if f:
-    session_name = str(f)
+if smexxxx:
+    session_name = str(smexxxx)
     print("String 4 Found")
     hdk = TelegramClient(StringSession(session_name), a, b)
     try:
@@ -71,8 +71,8 @@ else:
     print("Session 4 not Found")
     pass
 
-if g:
-    session_name = str(g)
+if smexxxxx:
+    session_name = str(smexxxxx)
     print("String 5 Found")
     sdk = TelegramClient(StringSession(session_name), a, b)
     try:
