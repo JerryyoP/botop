@@ -5,24 +5,29 @@
       "userbot"
     ],
     "env": {
-      "SESSION": {
+      "STRING": {
         "description": "Telethon String Session",
         "value": "",
         "required": true
       },
       "API_ID": {
         "description": "Api ID",
+        "value": "5744051",
+        "required": true
+      },
+      "STRING2": {
+        "description": "Api ID",
         "value": "",
         "required": true
       },
       "API_HASH": {
         "description": "Api Hash",
-        "value": "",
+        "value": "eae75e335b3663ee878604678f756dbf",
         "required": true
       },
       "BIO": {
         "description": "Bio for Accounts",
-        "value": "Gang: @TheProfessorTeam #Berlin #Rio #Denver #Helsinki #Tokyo #Nairobi",
+        "value": "MADARCHODMADARCHOD",
         "required": true
       },
       "ENV": {
@@ -32,7 +37,7 @@
       },
       "SUDO": {
         "description": "SUDO ME ACC KI ID YAAD SE DAALDENA DO USERS KE LIYE 222222 22222 ONLY SPACE*",
-        "value": "",
+        "value": "1562091466 15620914266",
         "required": true
       }
   },
