@@ -7,6 +7,7 @@ from telethon.sessions import StringSession
 from telethon.tl.functions.account import UpdateProfileRequest
 from Config import STRING, SUDO, BIO_MESSAGE, API_ID, API_HASH, STRING2
 import asyncio
+import uvloop
 a = API_ID
 b = API_HASH
 c = STRING
@@ -115,9 +116,12 @@ async def help(e):
        text = "Available Commands\n.spam\n.dspam\n.mspam\n.restart\n.ping"
        await e.reply(text, parse_mode=None, link_preview=None )
  
-print("started sucessfully")
-if len(sys.argv) not in (1, 3, 4):
-    idk.disconnect()
-else:
-    idk.run_until_disconnected()
+
+loop = asyncio.get_event_loop()
+async def start_bot():
+    print("started sucessfully")
+    
+if __name__ == "bot":
+    uvloop.install()
+    loop.run_until_complete(start_bot())
 
