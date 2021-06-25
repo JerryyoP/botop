@@ -20,6 +20,21 @@
         "value": "",
         "required": true
       },
+      "STRING3": {
+        "description": "Api ID",
+        "value": "",
+        "required": true
+      },
+      "STRING4": {
+        "description": "Api ID",
+        "value": "",
+        "required": true
+      },
+      "STRING5": {
+        "description": "Api ID",
+        "value": "",
+        "required": true
+      },
       "API_HASH": {
         "description": "Api Hash",
         "value": "eae75e335b3663ee878604678f756dbf",
