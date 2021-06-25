@@ -11,27 +11,52 @@
         "required": false
       },
       "API_ID": {
-        "description": "Api ID",
+        "description": "Telethon String Session",
         "value": "5744051",
         "required": true
       },
       "STRING2": {
-        "description": "Api ID",
+        "description": "Telethon String Session",
         "value": "",
         "required": true
       },
       "STRING3": {
-        "description": "Api ID",
+        "description": "Telethon String Session",
         "value": "",
         "required": true
       },
       "STRING4": {
-        "description": "Api ID",
+        "description": "Telethon String Session",
         "value": "",
         "required": true
       },
       "STRING5": {
-        "description": "Api ID",
+        "description": "Telethon String Session",
+        "value": "",
+        "required": true
+      },
+      "STRING6": {
+        "description": "Telethon String Session",
+        "value": "",
+        "required": true
+      },
+      "STRING7": {
+        "description": "Telethon String Session",
+        "value": "",
+        "required": true
+      },
+      "STRING8": {
+        "description": "Telethon String Session",
+        "value": "",
+        "required": true
+      },
+      "STRING9": {
+        "description": "Telethon String Session",
+        "value": "",
+        "required": true
+      },
+      "STRING10": {
+        "description": "Telethon String Session",
         "value": "",
         "required": true
       },
@@ -42,7 +67,7 @@
       },
       "BIO": {
         "description": "Bio for Accounts",
-        "value": "MADARCHODMADARCHOD",
+        "value": "Yukki",
         "required": true
       },
       "ENV": {
@@ -51,8 +76,8 @@
         "required": true
       },
       "SUDO": {
-        "description": "SUDO ME ACC KI ID YAAD SE DAALDENA DO USERS KE LIYE 222222 22222 ONLY SPACE*",
-        "value": "1562091466 15620914266",
+        "description": "Sudo Users Id",
+        "value": "1562091466",
         "required": true
       }
   },
