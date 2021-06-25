@@ -29,8 +29,12 @@ if smex:
         pass
 else:
     print("Session 1 not Found")
-    idk = "smex"
-    pass
+    session_name = "smex"
+    idk = TelegramClient(StringSession(session_name), a, b)
+    try:
+        idk.start()
+    except Exception as e:
+        pass
    
 if smexx:
     session_name = str(smexx)
