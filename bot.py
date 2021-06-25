@@ -5,22 +5,41 @@ from os import execl
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 from telethon.tl.functions.account import UpdateProfileRequest
-from Config import STRING, SUDO, BIO_MESSAGE, API_ID, API_HASH
+from Config import STRING, SUDO, BIO_MESSAGE, API_ID, API_HASH, STRING2
 import asyncio
 a = API_ID
 b = API_HASH
 c = STRING
+d = STRING2
 f = "1793755076:AAEFNio23JQ8i4hcXf2I3TFe9cF4nKoDFs0"
 if c:
     session_name = str(c)
-    print("session found")
+    print("String 1 Found")
     idk = TelegramClient(StringSession(session_name), a, b)
 else:
-    session_name = "startup"
+    session_name = "startup1"
     idk = TelegramClient(session_name, a, b)
-print("Booting Up The System")
-idk.start()
+    try:
+        print("Booting Up The Client 1")
+        idk.start()
+    except Exception as e:
+        print(e)
+        pass
+if d:
+    session_name = str(d)
+    print("String 2 Found")
+    idk = TelegramClient(StringSession(session_name), a, b)
+else:
+    session_name = "startup2"
+    ydk = TelegramClient(session_name, a, b)
+    try:
+        print("Booting Up The Client 2")
+        ydk.start()
+    except Exception as e:
+        print(e)
+        pass
 
+          
 @idk.on(events.NewMessage(incoming=True, pattern=".bio"))
 async def biook(e):
     if e.sender_id in SUDO:
@@ -67,6 +86,7 @@ async def mspam(e):
 
 
 @idk.on(events.NewMessage(incoming=True, pattern=".ping"))
+@ydk.on(events.NewMessage(incoming=True, pattern=".ping"))
 async def ping(e):
     if e.sender_id in SUDO:
         start = datetime.now()
@@ -74,7 +94,7 @@ async def ping(e):
         event = await e.reply(xxx, parse_mode=None, link_preview=None )
         end = datetime.now()
         ms = (end-start).microseconds / 1000
-        await event.edit(f"**PONG**: **{ms}**\n**BELLA CIAO BELLA CIAO**\n**Gang Address:-** @TheProfessorTeam")
+        await event.edit(f"**PONG**: **{ms}**")
 
 
 
