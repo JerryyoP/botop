@@ -24,12 +24,12 @@ if smex:
         print("Booting Up The Client 1")
         idk.start()
     except Exception as e:
-        idk = 1
+        idk = "smex"
         print(e)
         pass
 else:
     print("Session 1 not Found")
-    idk = 1
+    idk = "smex"
     pass
    
 if smexx:
@@ -158,7 +158,7 @@ async def ping(e):
 @sdk.on(events.NewMessage(incoming=True, pattern=".restart"))
 async def restart(e):
     if e.sender_id in SUDO:
-        text = "**__Restart__**\n\Restarted the clients... Please wait till it reboots..."
+        text = "**__Restart__**\n\nRestarted the clients... Please wait till it reboots..."
         await e.reply(text, parse_mode=None, link_preview=None )
         try:
             await idk.disconnect()
@@ -192,4 +192,45 @@ async def help(e):
  
 print("Started sucessfully")
     
-idle()
+if len(sys.argv) not in (1, 3, 4):
+    try:
+        idk.disconnect()
+    except Exception as e:
+        pass
+    try:
+        ydk.disconnect()
+    except Exception as e:
+        pass
+    try:
+        wdk.disconnect()
+    except Exception as e:
+        pass
+    try:
+        hdk.disconnect()
+    except Exception as e:
+        pass
+    try:
+        sdk.disconnect()
+    except Exception as e:
+        pass
+else:
+    try:
+        idk.run_until_disconnected()
+    except Exception as e:
+        pass
+    try:
+        ydk.run_until_disconnected()
+    except Exception as e:
+        pass
+    try:
+        wdk.run_until_disconnected()
+    except Exception as e:
+        pass
+    try:
+        hdk.run_until_disconnected()
+    except Exception as e:
+        pass
+    try:
+        sdk.run_until_disconnected()
+    except Exception as e:
+        pass
