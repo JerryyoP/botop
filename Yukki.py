@@ -15,7 +15,7 @@ smexx = STRING2
 smexxx = STRING3
 smexxxx = STRING4
 smexxxxx = STRING5
-
+sex = "sexykarnedoyaar"
 if smex:
     session_name = str(smex)
     print("String 1 Found")
@@ -29,7 +29,7 @@ if smex:
         pass
 else:
     print("Session 1 not Found")
-    session_name = "smex"
+    session_name = str(smex)
     idk = TelegramClient(StringSession(session_name), a, b)
     try:
         idk.start()
@@ -37,7 +37,7 @@ else:
         pass
    
 if smexx:
-    session_name = str(smexx)
+    session_name = str(sex)
     print("String 2 Found")
     ydk = TelegramClient(StringSession(session_name), a, b)
     try:
