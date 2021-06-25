@@ -16,28 +16,29 @@ if c:
     session_name = str(c)
     print("String 1 Found")
     idk = TelegramClient(StringSession(session_name), a, b)
-else:
-    session_name = "startup1"
-    idk = TelegramClient(session_name, a, b)
     try:
         print("Booting Up The Client 1")
         idk.start()
     except Exception as e:
         print(e)
         pass
+else:
+    print("Session 1 not Found")
+    pass
+   
 if d:
     session_name = str(d)
     print("String 2 Found")
-    idk = TelegramClient(StringSession(session_name), a, b)
-else:
-    session_name = "startup2"
-    ydk = TelegramClient(session_name, a, b)
+    ydk = TelegramClient(StringSession(session_name), a, b)
     try:
         print("Booting Up The Client 2")
         ydk.start()
     except Exception as e:
         print(e)
         pass
+else:
+    print("Session 2 not Found")
+    pass
 
           
 @idk.on(events.NewMessage(incoming=True, pattern=".bio"))
