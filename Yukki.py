@@ -158,11 +158,12 @@ async def ping(e):
 @sdk.on(events.NewMessage(incoming=True, pattern=".restart"))
 async def restart(e):
     if e.sender_id in SUDO:
-        text = "RESTARTED, CHECK ME AFTER 2 MINUTES"
+        text = "**__Restart__**\n\Restarted the clients... Please wait till it reboots..."
         await e.reply(text, parse_mode=None, link_preview=None )
         try:
             await idk.disconnect()
         except Exception as e:
+            print(e)
             pass
         try:
             await ydk.disconnect()
