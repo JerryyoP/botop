@@ -7,6 +7,7 @@ from telethon.sessions import StringSession
 from telethon.tl.functions.account import UpdateProfileRequest
 from Config import STRING, SUDO, BIO_MESSAGE, API_ID, API_HASH, STRING2, STRING3, STRING4 ,STRING5
 import asyncio
+from pyrogram import idle
 a = API_ID
 b = API_HASH
 smex = STRING
