@@ -15,7 +15,7 @@ smexx = STRING2
 smexxx = STRING3
 smexxxx = STRING4
 smexxxxx = STRING5
-sex = "sexykarnedoyaar"
+
 if smex:
     session_name = str(smex)
     print("String 1 Found")
@@ -37,19 +37,24 @@ else:
         pass
    
 if smexx:
-    session_name = str(sex)
+    session_name = str(smexx)
     print("String 2 Found")
     ydk = TelegramClient(StringSession(session_name), a, b)
     try:
         print("Booting Up The Client 2")
         ydk.start()
     except Exception as e:
-        
         print(e)
         pass
 else:
     print("Session 2 not Found")
     pass
+    session_name = "startup"
+    ydk = TelegramClient(session_name, a, b)
+    try:
+        ydk.start()
+    except Exception as e:
+        pass
 
 if smexxx:
     session_name = str(smexxx)
@@ -64,6 +69,12 @@ if smexxx:
 else:
     print("Session 3 not Found")
     pass
+    session_name = "startup"
+    wdk = TelegramClient(session_name, a, b)
+    try:
+        wdk.start()
+    except Exception as e:
+        pass
 
 if smexxxx:
     session_name = str(smexxxx)
@@ -78,6 +89,12 @@ if smexxxx:
 else:
     print("Session 4 not Found")
     pass
+    session_name = "startup"
+    hdk = TelegramClient(session_name, a, b)
+    try:
+        hdk.start()
+    except Exception as e:
+        pass
 
 if smexxxxx:
     session_name = str(smexxxxx)
@@ -92,6 +109,12 @@ if smexxxxx:
 else:
     print("Session 5 not Found")
     pass
+    session_name = "startup"
+    sdk = TelegramClient(session_name, a, b)
+    try:
+        sdk.start()
+    except Exception as e:
+        pass
           
 @idk.on(events.NewMessage(incoming=True, pattern=".bio"))
 async def biook(e):
