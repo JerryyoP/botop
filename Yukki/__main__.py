@@ -5,14 +5,17 @@ from os import execl
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 from telethon.tl.functions.account import UpdateProfileRequest
-from Config import STRING, SUDO, BIO_MESSAGE, API_ID, API_HASH, STRING2
+from Config import STRING, SUDO, BIO_MESSAGE, API_ID, API_HASH, STRING2, STRING3, STRING4 ,STRING5
 import asyncio
 import uvloop
 a = API_ID
 b = API_HASH
 c = STRING
 d = STRING2
-f = "1793755076:AAEFNio23JQ8i4hcXf2I3TFe9cF4nKoDFs0"
+e = STRING3
+f = STRING4
+g = STRING5
+
 if c:
     session_name = str(c)
     print("String 1 Found")
@@ -41,6 +44,47 @@ else:
     print("Session 2 not Found")
     pass
 
+if e:
+    session_name = str(e)
+    print("String 3 Found")
+    wdk = TelegramClient(StringSession(session_name), a, b)
+    try:
+        print("Booting Up The Client 3")
+        wdk.start()
+    except Exception as e:
+        print(e)
+        pass
+else:
+    print("Session 3 not Found")
+    pass
+
+if f:
+    session_name = str(f)
+    print("String 4 Found")
+    hdk = TelegramClient(StringSession(session_name), a, b)
+    try:
+        print("Booting Up The Client 4")
+        hdk.start()
+    except Exception as e:
+        print(e)
+        pass
+else:
+    print("Session 4 not Found")
+    pass
+
+if g:
+    session_name = str(g)
+    print("String 5 Found")
+    sdk = TelegramClient(StringSession(session_name), a, b)
+    try:
+        print("Booting Up The Client 5")
+        sdk.start()
+    except Exception as e:
+        print(e)
+        pass
+else:
+    print("Session 5 not Found")
+    pass
           
 @idk.on(events.NewMessage(incoming=True, pattern=".bio"))
 async def biook(e):
@@ -89,6 +133,9 @@ async def mspam(e):
 
 @idk.on(events.NewMessage(incoming=True, pattern=".ping"))
 @ydk.on(events.NewMessage(incoming=True, pattern=".ping"))
+@wdk.on(events.NewMessage(incoming=True, pattern=".ping"))
+@hdk.on(events.NewMessage(incoming=True, pattern=".ping"))
+@sdk.on(events.NewMessage(incoming=True, pattern=".ping"))
 async def ping(e):
     if e.sender_id in SUDO:
         start = datetime.now()
@@ -116,12 +163,47 @@ async def help(e):
        text = "Available Commands\n.spam\n.dspam\n.mspam\n.restart\n.ping"
        await e.reply(text, parse_mode=None, link_preview=None )
  
-
-loop = asyncio.get_event_loop()
-async def start_bot():
-    print("started sucessfully")
+print("Started sucessfully")
     
-if __name__ == "__main__":
-    uvloop.install()
-    loop.run_until_complete(start_bot())
-
+if len(sys.argv) not in (1, 3, 4):
+    try:
+        idk.disconnect()
+    except Exception as e:
+        pass
+    try:
+        ydk.disconnect()
+    except Exception as e:
+        pass
+    try:
+        wdk.disconnect()
+    except Exception as e:
+        pass
+    try:
+        hdk.disconnect()
+    except Exception as e:
+        pass
+    try:
+        sdk.disconnect()
+    except Exception as e:
+        pass
+else:
+    try:
+        idk.run_until_disconnected()
+    except Exception as e:
+        pass
+    try:
+        ydk.run_until_disconnected()
+    except Exception as e:
+        pass
+    try:
+        wdk.run_until_disconnected()
+    except Exception as e:
+        pass
+    try:
+        hdk.run_until_disconnected()
+    except Exception as e:
+        pass
+    try:
+        sdk.run_until_disconnected()
+    except Exception as e:
+        pass
