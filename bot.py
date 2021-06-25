@@ -121,7 +121,7 @@ loop = asyncio.get_event_loop()
 async def start_bot():
     print("started sucessfully")
     
-if __name__ == "bot":
+if __name__ == "__main__":
     uvloop.install()
     loop.run_until_complete(start_bot())
 
