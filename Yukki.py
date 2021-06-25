@@ -165,45 +165,4 @@ async def help(e):
  
 print("Started sucessfully")
     
-if len(sys.argv) not in (1, 3, 4):
-    try:
-        idk.disconnect()
-    except Exception as e:
-        pass
-    try:
-        ydk.disconnect()
-    except Exception as e:
-        pass
-    try:
-        wdk.disconnect()
-    except Exception as e:
-        pass
-    try:
-        hdk.disconnect()
-    except Exception as e:
-        pass
-    try:
-        sdk.disconnect()
-    except Exception as e:
-        pass
-else:
-    try:
-        idk.run_until_disconnected()
-    except Exception as e:
-        pass
-    try:
-        ydk.run_until_disconnected()
-    except Exception as e:
-        pass
-    try:
-        wdk.run_until_disconnected()
-    except Exception as e:
-        pass
-    try:
-        hdk.run_until_disconnected()
-    except Exception as e:
-        pass
-    try:
-        sdk.run_until_disconnected()
-    except Exception as e:
-        pass
+idle()
