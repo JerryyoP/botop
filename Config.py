@@ -3,8 +3,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-STRING = getenv("SESSION")
-STRING2 = getenv("SESSION2")
+STRING = getenv("STRING")
+STRING2 = getenv("STRING2")
 API_ID = getenv("API_ID")
 API_HASH = getenv("API_HASH")
 BIO_MESSAGE = getenv("BIO")
