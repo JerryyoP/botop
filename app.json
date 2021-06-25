@@ -5,10 +5,10 @@
       "userbot"
     ],
     "env": {
-      "STRING": {
+      "STRING1": {
         "description": "Telethon String Session",
         "value": "",
-        "required": false
+        "required": true
       },
       "API_ID": {
         "description": "Telethon String Session",
