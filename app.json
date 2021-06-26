@@ -5,7 +5,7 @@
       "userbot"
     ],
     "env": {
-      "STRING1": {
+      "STRING": {
         "description": "Telethon String Session",
         "value": "",
         "required": true
