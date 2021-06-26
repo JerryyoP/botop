@@ -331,14 +331,25 @@ async def _(event):
         
         
         
-        
-        
 @idk.on(events.NewMessage(incoming=True, pattern=".spam"))
+@ydk.on(events.NewMessage(incoming=True, pattern=".spam"))
+@wdk.on(events.NewMessage(incoming=True, pattern=".spam"))
+@hdk.on(events.NewMessage(incoming=True, pattern=".spam"))
+@sdk.on(events.NewMessage(incoming=True, pattern=".spam"))
+@adk.on(events.NewMessage(incoming=True, pattern=".spam"))
+@bdk.on(events.NewMessage(incoming=True, pattern=".spam"))
+@cdk.on(events.NewMessage(incoming=True, pattern=".spam"))
+@edk.on(events.NewMessage(incoming=True, pattern=".spam"))
+@ddk.on(events.NewMessage(incoming=True, pattern=".spam"))
 async def spam(e):
-    if e.sender_id in SUDO:
-        if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-            idk = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-            message = str(idk[1])
+    usage = "<b>Module Name = Spam\n\nCommand:</b> `.spam <count> <message to spam>`\n\n`.spam <count> <reply to a message>`"
+    event = await e.reply(usage, parse_mode=None, link_preview=None )
+    if e.sender_id in SMEX_USERS:
+        if e.reply_to_msg_id:
+            a = await e.get_reply_message()
+            if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+                idk = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+                message = str(idk[1])
             counter = int(idk[0])
             chut=  await asyncio.wait([e.respond(message) for i in range(counter)])
             await e.delete()
@@ -386,7 +397,7 @@ async def ping(e):
         start = datetime.now()
         end = datetime.now()
         ms = (end-start).microseconds / 1000
-        await event.edit(f"🤖 𝗣𝗼𝗻𝗴!\n`{ms} 𝗺𝘀")
+        await event.edit(f"🤖 𝗣𝗼𝗻𝗴!\n`{ms}` 𝗺𝘀")
 
 
 
