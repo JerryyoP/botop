@@ -476,16 +476,16 @@ async def spam(e):
             await e.reply(usage, parse_mode=None, link_preview=None )
 
 
-@idk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
-@ydk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
-@wdk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
-@hdk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
-@sdk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
-@adk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
-@bdk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
-@cdk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
-@edk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
-@ddk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
+@idk.on(events.NewMessage(incoming=True, pattern=".raid"))
+@ydk.on(events.NewMessage(incoming=True, pattern=".raid"))
+@wdk.on(events.NewMessage(incoming=True, pattern=".raid"))
+@hdk.on(events.NewMessage(incoming=True, pattern=".raid"))
+@sdk.on(events.NewMessage(incoming=True, pattern=".raid"))
+@adk.on(events.NewMessage(incoming=True, pattern=".raid"))
+@bdk.on(events.NewMessage(incoming=True, pattern=".raid"))
+@cdk.on(events.NewMessage(incoming=True, pattern=".raid"))
+@edk.on(events.NewMessage(incoming=True, pattern=".raid"))
+@ddk.on(events.NewMessage(incoming=True, pattern=".raid"))
 async def spam(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗮𝗶𝗱\nCommand:\n\n.raid <count> <Username of User>\n\n.raid <count> <reply to a User>\n\nCount must be a integer."
     if e.sender_id in SMEX_USERS:
