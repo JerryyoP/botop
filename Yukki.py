@@ -23,7 +23,6 @@ seven = STRING7
 eight = STRING8
 ninth = STRING9
 tenth = STRING10
-print(SUDO)
 idk = ""
 ydk = ""
 wdk = ""
@@ -34,12 +33,12 @@ bdk = ""
 cdk = ""
 edk = ""
 ddk = ""
+que = {}
 SMEX_USERS = []
 for x in SUDO:
     SMEX_USERS.append(x)
-print(SMEX_USERS)
 
-async def load_sudoers():
+async def start_yukki():
     global idk
     global ydk
     global wdk
@@ -303,7 +302,7 @@ async def load_sudoers():
             pass 
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete(load_sudoers())       
+loop.run_until_complete(start_yukki())       
 
 async def gifspam(e, smex):
     try:
@@ -526,6 +525,134 @@ async def spam(e):
 
 
 
+
+
+@idk.on(events.NewMessage(incoming=True))
+@ydk.on(events.NewMessage(incoming=True))
+@wdk.on(events.NewMessage(incoming=True))
+@hdk.on(events.NewMessage(incoming=True))
+@sdk.on(events.NewMessage(incoming=True))
+@adk.on(events.NewMessage(incoming=True))
+@bdk.on(events.NewMessage(incoming=True))
+@cdk.on(events.NewMessage(incoming=True))
+@edk.on(events.NewMessage(incoming=True))
+@ddk.on(events.NewMessage(incoming=True))
+async def _(event):
+    global que
+    queue = que.get(event.sender_id)
+    if not queue:
+        return
+    async with event.client.action(event.chat_id, "typing"):
+        await asyncio.sleep(0.3)
+    async with event.client.action(event.chat_id, "typing"):
+        await event.client.send_message(
+            entity=event.chat_id,
+            message="""{}""".format(random.choice(RRAID)),
+            reply_to=event.message.id,
+        )           
+            
+            
+@idk.on(events.NewMessage(incoming=True, pattern=".replyraid"))
+@ydk.on(events.NewMessage(incoming=True, pattern=".replyraid"))
+@wdk.on(events.NewMessage(incoming=True, pattern=".replyraid"))
+@hdk.on(events.NewMessage(incoming=True, pattern=".replyraid"))
+@sdk.on(events.NewMessage(incoming=True, pattern=".replyraid"))
+@adk.on(events.NewMessage(incoming=True, pattern=".replyraid"))
+@bdk.on(events.NewMessage(incoming=True, pattern=".replyraid"))
+@cdk.on(events.NewMessage(incoming=True, pattern=".replyraid"))
+@edk.on(events.NewMessage(incoming=True, pattern=".replyraid"))
+@ddk.on(events.NewMessage(incoming=True, pattern=".replyraid"))
+async def _(event):
+    global que
+    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱\n\nCommand:\n\n.replyraid <Username of User>\n\n.replyraid <reply to a User>"
+    if e.sender_id in SMEX_USERS:
+        if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
+            return await e.reply(usage, parse_mode=None, link_preview=None )
+        yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+        smex = await e.get_reply_message()
+        if len(yukki) == 1:
+            message = str(yukki[0])
+            a = await e.client.get_entity(message)
+            g = a.id
+            que[g] = []
+            qeue = que.get(g)
+            appendable = [g]
+            qeue.append(appendable)
+            text = "Activated Reply Raid"
+            await e.reply(text, parse_mode=None, link_preview=None )
+        elif e.reply_to_msg_id:             
+            a = await e.get_reply_message()
+            b = await e.client.get_entity(a.sender_id)
+            g = b.id
+            que[g] = []
+            qeue = que.get(g)
+            appendable = [g]
+            qeue.append(appendable)
+            text = "Activated Reply Raid"
+            await e.reply(text, parse_mode=None, link_preview=None )
+        else:
+            await e.reply(usage, parse_mode=None, link_preview=None )
+    
+    
+    if event.reply_to_msg_id:
+        a = await event.get_reply_message()
+        b = await event.client.get_entity(a.sender_id)
+        e = b.id
+        c = b.first_name
+        username = f"[{c}](tg://user?id={e})"
+        event = await edit_or_reply(event, "Reply Raid Activating....")
+        que[e] = []
+        qeue = que.get(e)
+        appendable = [e]
+        qeue.append(appendable)
+        await event.edit(f"Reply Raid has been activated on {username}")
+    else:
+        user = event.pattern_match.group(1)
+        event = await edit_or_reply(event, "Reply Raid Activating....")
+        a = await event.client.get_entity(user)
+        e = a.id
+        c = a.first_name
+        username = f"[{c}](tg://user?id={e})"
+        que[e] = []
+        qeue = que.get(e)
+        appendable = [e]
+        qeue.append(appendable)
+        await event.edit(f"Reply Raid has been activated on {username}")
+
+
+@bot.on(admin_cmd(pattern="dreplyraid(?: |$)(.*)"))
+@bot.on(sudo_cmd(pattern="dreplyraid(?: |$)(.*)", allow_sudo=True))
+async def _(event):
+    global que
+    if event.fwd_from:
+        return
+    if event.reply_to_msg_id:
+        a = await event.get_reply_message()
+        b = await event.client.get_entity(a.sender_id)
+        e = b.id
+        c = b.first_name
+        username = f"[{c}](tg://user?id={e})"
+        event = await edit_or_reply(event, "Reply Raid De-activating....")
+        queue = que.get(e)
+        queue.pop(0)
+        await event.edit(f"Reply Raid has been De-activated on {username}")
+    else:
+        user = event.pattern_match.group(1)
+        event = await edit_or_reply(event, "Reply Raid De-activating....")
+        a = await event.client.get_entity(user)
+        e = a.id
+        c = a.first_name
+        username = f"[{c}](tg://user?id={e})"
+        queue = que.get(e)
+        queue.pop(0)
+        await event.edit(f"Reply Raid has been De-activated on {username}")            
+            
+            
+            
+            
+            
+            
+
 @idk.on(events.NewMessage(incoming=True, pattern=".ping"))
 @ydk.on(events.NewMessage(incoming=True, pattern=".ping"))
 @wdk.on(events.NewMessage(incoming=True, pattern=".ping"))
@@ -553,14 +680,18 @@ async def ping(e):
 @wdk.on(events.NewMessage(incoming=True, pattern=".restart"))
 @hdk.on(events.NewMessage(incoming=True, pattern=".restart"))
 @sdk.on(events.NewMessage(incoming=True, pattern=".restart"))
+@adk.on(events.NewMessage(incoming=True, pattern=".restart"))
+@bdk.on(events.NewMessage(incoming=True, pattern=".restart"))
+@cdk.on(events.NewMessage(incoming=True, pattern=".restart"))
+@edk.on(events.NewMessage(incoming=True, pattern=".restart"))
+@ddk.on(events.NewMessage(incoming=True, pattern=".restart"))
 async def restart(e):
-    if e.sender_id in SUDO:
-        text = "**__Restart__**\n\nRestarted the clients... Please wait till it reboots..."
+    if e.sender_id in SMEX_USERS:
+        text = "𝙍𝙚𝙨𝙩𝙖𝙧𝙩𝙚𝙙\n\nPlease wait till it reboots..."
         await e.reply(text, parse_mode=None, link_preview=None )
         try:
             await idk.disconnect()
         except Exception as e:
-            print(e)
             pass
         try:
             await ydk.disconnect()
@@ -578,13 +709,33 @@ async def restart(e):
             await sdk.disconnect()
         except Exception as e:
             pass
+        try:
+            await adk.disconnect()
+        except Exception as e:
+            pass
+        try:
+            await bdk.disconnect()
+        except Exception as e:
+            pass
+        try:
+            await cdk.disconnect()
+        except Exception as e:
+            pass
+        try:
+            await ddk.disconnect()
+        except Exception as e:
+            pass
+        try:
+            await edk.disconnect()
+        except Exception as e:
+            pass
         os.execl(sys.executable, sys.executable, *sys.argv)
         quit()
 
 @idk.on(events.NewMessage(incoming=True, pattern=".help"))
 async def help(e):
-    if e.sender_id in SUDO:
-       text = "Available Commands\n.spam\n.dspam\n.mspam\n.restart\n.ping"
+    if e.sender_id in SMEX_USERS:
+       text = "Available Commands:\n\n.spam\n.delayspam\n.bigspam\n.raid\n.replyraid"
        await e.reply(text, parse_mode=None, link_preview=None )
 
         
