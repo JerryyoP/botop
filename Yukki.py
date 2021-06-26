@@ -699,16 +699,22 @@ async def _(e):
             message = str(yukki[0])
             a = await e.client.get_entity(message)
             g = a.id
-            queue = que.get(g)
-            queue.pop(0)
+            try:
+                queue = que.get(g)
+                queue.pop(0)
+            except Exception as e:
+                pass
             text = "De-Activated Reply Raid"
             await e.reply(text, parse_mode=None, link_preview=None )
         elif e.reply_to_msg_id:             
             a = await e.get_reply_message()
             b = await e.client.get_entity(a.sender_id)
             g = b.id
-            queue = que.get(g)
-            queue.pop(0)
+            try:
+                queue = que.get(g)
+                queue.pop(0)
+            except Exception as e:
+                pass
             text = "De-Activated Reply Raid"
             await e.reply(text, parse_mode=None, link_preview=None )
         else:
