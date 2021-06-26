@@ -278,7 +278,9 @@ async def load_sudoers():
             edk.start()
         except Exception as e:
             pass 
-    
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(load_sudoers())       
     
 @idk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
 @ydk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
@@ -409,9 +411,7 @@ async def help(e):
 
 
 
-
-loop = asyncio.get_event_loop()
-loop.run_until_complete(load_sudoers())        
+     
         
         
         
