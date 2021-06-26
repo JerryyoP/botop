@@ -424,16 +424,55 @@ async def spam(e):
             sleeptime = float(yukki[0])
             for _ in range(counter):
                 async with e.client.action(e.chat_id, "typing"):
-                    if e.reply_to_msg_id:
-                        await smex.reply(message)
-                    else:
-                        await e.client.send_message(e.chat_id, message)
+                    await e.client.send_message(e.chat_id, message)
                     await asyncio.sleep(sleeptime)
         else:
             await e.reply(usage, parse_mode=None, link_preview=None )
 
 
-
+@idk.on(events.NewMessage(incoming=True, pattern=".bigspam"))
+@ydk.on(events.NewMessage(incoming=True, pattern=".bigspam"))
+@wdk.on(events.NewMessage(incoming=True, pattern=".bigspam"))
+@hdk.on(events.NewMessage(incoming=True, pattern=".bigspam"))
+@sdk.on(events.NewMessage(incoming=True, pattern=".bigspam"))
+@adk.on(events.NewMessage(incoming=True, pattern=".bigspam"))
+@bdk.on(events.NewMessage(incoming=True, pattern=".bigspam"))
+@cdk.on(events.NewMessage(incoming=True, pattern=".bigspam"))
+@edk.on(events.NewMessage(incoming=True, pattern=".bigspam"))
+@ddk.on(events.NewMessage(incoming=True, pattern=".bigspam"))
+async def spam(e):
+    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗕𝗶𝗴𝗦𝗽𝗮𝗺\nCommand:\n\n.bigspam <count> <message to spam>\n\n.bigspam <count> <reply to a message>\n\nCount must be a integer."
+    if e.sender_id in SMEX_USERS:
+        if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
+            return await e.reply(usage, parse_mode=None, link_preview=None )
+        yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+        smex = await e.get_reply_message()
+        if len(yukki) == 2:
+            message = str(yukki[1])
+            counter = int(yukki[0])
+            for _ in range(counter):
+                async with e.client.action(e.chat_id, "typing"):
+                    if e.reply_to_msg_id:
+                        await smex.reply(message)
+                    else:
+                        await e.client.send_message(e.chat_id, message)
+                    await asyncio.sleep(0.7)
+        elif e.reply_to_msg_id and smex.media:  
+            counter = int(yukki[0])
+            for _ in range(counter):
+                async with e.client.action(e.chat_id, "document"):
+                    smex = await e.client.send_file(e.chat_id, smex, caption=smex.text)
+                    await gifspam(e, smex) 
+                await asyncio.sleep(0.7)  
+        elif e.reply_to_msg_id and smex.text:
+            message = smex.text
+            counter = int(yukki[0])
+            for _ in range(counter):
+                async with e.client.action(e.chat_id, "typing"):
+                    await e.client.send_message(e.chat_id, message)
+                    await asyncio.sleep(0.7)
+        else:
+            await e.reply(usage, parse_mode=None, link_preview=None )
 
 
 
