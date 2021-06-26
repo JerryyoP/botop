@@ -380,7 +380,8 @@ async def mspam(e):
 @ddk.on(events.NewMessage(incoming=True, pattern=".ping"))
 async def ping(e):
     if e.sender_id in SMEX_USERS:
-        event = await edit_or_reply(event, "Pong!")
+        text = "Pong!"
+        event = await e.reply(text, parse_mode=None, link_preview=None )
         start = datetime.now()
         end = datetime.now()
         ms = (end-start).microseconds / 1000
