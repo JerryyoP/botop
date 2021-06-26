@@ -56,7 +56,7 @@ if smexx:
     try:
         print("Booting Up The Client 2")
         ydk.start()
-        botme = await ydk.get_me()
+        botme = ydk.get_me()
         botid = telethon.utils.get_peer_id(botme)
         SMEX_USERS.append(botid)
     except Exception as e:
@@ -79,7 +79,7 @@ if smexxx:
     try:
         print("Booting Up The Client 3")
         wdk.start()
-        botme = await wdk.get_me()
+        botme = wdk.get_me()
         botid = telethon.utils.get_peer_id(botme)
         SMEX_USERS.append(botid)
     except Exception as e:
@@ -102,7 +102,7 @@ if smexxxx:
     try:
         print("Booting Up The Client 4")
         hdk.start()
-        botme = await hdk.get_me()
+        botme = hdk.get_me()
         botid = telethon.utils.get_peer_id(botme)
         SMEX_USERS.append(botid)
     except Exception as e:
@@ -125,7 +125,7 @@ if smexxxxx:
     try:
         print("Booting Up The Client 5")
         sdk.start()
-        botme = await sdk.get_me()
+        botme = sdk.get_me()
         botid = telethon.utils.get_peer_id(botme)
         SMEX_USERS.append(botid)
     except Exception as e:
@@ -148,7 +148,7 @@ if sixth:
     try:
         print("Booting Up The Client 6")
         adk.start()
-        botme = await adk.get_me()
+        botme = adk.get_me()
         botid = telethon.utils.get_peer_id(botme)
         SMEX_USERS.append(botid)
     except Exception as e:
@@ -171,7 +171,7 @@ if seven:
     try:
         print("Booting Up The Client 7")
         bdk.start()
-        botme = await bdk.get_me()
+        botme = bdk.get_me()
         botid = telethon.utils.get_peer_id(botme)
         SMEX_USERS.append(botid)
     except Exception as e:
@@ -195,7 +195,7 @@ if eight:
     try:
         print("Booting Up The Client 8")
         cdk.start()
-        botme = await cdk.get_me()
+        botme = cdk.get_me()
         botid = telethon.utils.get_peer_id(botme)
         SMEX_USERS.append(botid)
     except Exception as e:
@@ -219,7 +219,7 @@ if ninth:
     try:
         print("Booting Up The Client 9")
         ddk.start()
-        botme = await ddk.get_me()
+        botme = ddk.get_me()
         botid = telethon.utils.get_peer_id(botme)
         SMEX_USERS.append(botid)
     except Exception as e:
@@ -243,7 +243,7 @@ if tenth:
     try:
         print("Booting Up The Client 10")
         edk.start()
-        botme = await edk.get_me()
+        botme = edk.get_me()
         botid = telethon.utils.get_peer_id(botme)
         SMEX_USERS.append(botid)
     except Exception as e:
@@ -386,7 +386,7 @@ async def help(e):
        await e.reply(text, parse_mode=None, link_preview=None )
  
 print("Started sucessfully")
-    
+print(SMEX_USERS)    
 if len(sys.argv) not in (1, 3, 4):
     try:
         idk.disconnect()
