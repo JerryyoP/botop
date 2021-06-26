@@ -8,6 +8,7 @@ from telethon.tl.functions.account import UpdateProfileRequest
 from Config import STRING, SUDO, BIO_MESSAGE, API_ID, API_HASH, STRING2, STRING3, STRING4 ,STRING5, STRING6, STRING7, STRING8 ,STRING9, STRING10
 import asyncio
 import telethon.utils
+from telethon.tl import functions
 a = API_ID
 b = API_HASH
 smex = STRING
@@ -34,6 +35,8 @@ async def load_sudoers():
             print("Booting Up The Client 1")
             idk.start()
             botme = await idk.get_me()
+            await idk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
+            await idk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
@@ -56,6 +59,8 @@ async def load_sudoers():
         try:
             print("Booting Up The Client 2")
             ydk.start()
+            await ydk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
+            await ydk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await ydk.get_me()
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
@@ -79,6 +84,8 @@ async def load_sudoers():
         try:
             print("Booting Up The Client 3")
             wdk.start()
+            await wdk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
+            await wdk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await wdk.get_me()
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
@@ -102,6 +109,8 @@ async def load_sudoers():
         try:
             print("Booting Up The Client 4")
             hdk.start()
+            await hdk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
+            await hdk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await hdk.get_me()
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
@@ -125,6 +134,8 @@ async def load_sudoers():
         try:
             print("Booting Up The Client 5")
             sdk.start()
+            await sdk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
+            await sdk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await sdk.get_me()
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
@@ -148,6 +159,8 @@ async def load_sudoers():
         try:
             print("Booting Up The Client 6")
             adk.start()
+            await adk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
+            await adk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await adk.get_me()
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
@@ -171,6 +184,8 @@ async def load_sudoers():
         try:
             print("Booting Up The Client 7")
             bdk.start()
+            await bdk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
+            await bdk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await bdk.get_me()
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
@@ -195,6 +210,8 @@ async def load_sudoers():
         try:
             print("Booting Up The Client 8")
             cdk.start()
+            await cdk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
+            await cdk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await cdk.get_me()
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
@@ -218,6 +235,8 @@ async def load_sudoers():
         try:
             print("Booting Up The Client 9")
             ddk.start()
+            await ddk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
+            await ddk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await ddk.get_me()
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
@@ -242,6 +261,8 @@ async def load_sudoers():
         try:
             print("Booting Up The Client 10")
             edk.start()
+            await edk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
+            await edk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await edk.get_me()
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
@@ -279,7 +300,7 @@ async def _(event):
     event = await edit_or_reply(event, "Trying")
     try:
         await event.client(functions.account.UpdateProfileRequest(about=bio))
-        await event.edit("Succesfully changed my profile bio")
+        await event.edit("Succesfully Changed Bio")
     except Exception as e:
         await event.edit(str(e))        
         
