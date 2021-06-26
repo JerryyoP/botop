@@ -337,7 +337,7 @@ async def _(e):
     if e.sender_id in SMEX_USERS:
         yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         smex = await e.get_reply_message()
-        if len(e.text) > 2:
+        if len(e.text) > 3:
             bio = str(yukki[0])
             text = "Changing Bio"
             event = await e.reply(text, parse_mode=None, link_preview=None )
