@@ -20,244 +20,243 @@ seven = STRING7
 eight = STRING8
 ninth = STRING9
 tenth = STRING10
-
+print(SUDO)
 
 SMEX_USERS = []
 SMEX_USERS.append(SUDO)
 
-
-if smex:
-    session_name = str(smex)
-    print("String 1 Found")
-    idk = TelegramClient(StringSession(session_name), a, b)
-    try:
-        print("Booting Up The Client 1")
-        idk.start()
-        botme = idk.get_me()
-        botid = telethon.utils.get_peer_id(botme)
-        SMEX_USERS.append(botid)
-    except Exception as e:
-        idk = "smex"
-        print(e)
-        pass
-else:
-    print("Session 1 not Found")
-    session_name = "startup"
-    idk = TelegramClient(session_name, a, b)
-    try:
-        idk.start()
-    except Exception as e:
-        pass
+async def load_sudoers():
+    if smex:
+        session_name = str(smex)
+        print("String 1 Found")
+        idk = TelegramClient(StringSession(session_name), a, b)
+        try:
+            print("Booting Up The Client 1")
+            idk.start()
+            botme = await idk.get_me()
+            botid = telethon.utils.get_peer_id(botme)
+            SMEX_USERS.append(botid)
+        except Exception as e:
+            idk = "smex"
+            print(e)
+            pass
+    else:
+        print("Session 1 not Found")
+        session_name = "startup"
+        idk = TelegramClient(session_name, a, b)
+        try:
+            idk.start()
+        except Exception as e:
+            pass
    
-if smexx:
-    session_name = str(smexx)
-    print("String 2 Found")
-    ydk = TelegramClient(StringSession(session_name), a, b)
-    try:
-        print("Booting Up The Client 2")
-        ydk.start()
-        botme = ydk.get_me()
-        botid = telethon.utils.get_peer_id(botme)
-        SMEX_USERS.append(botid)
-    except Exception as e:
-        print(e)
+    if smexx:
+        session_name = str(smexx)
+        print("String 2 Found")
+        ydk = TelegramClient(StringSession(session_name), a, b)
+        try:
+            print("Booting Up The Client 2")
+            ydk.start()
+            botme = await ydk.get_me()
+            botid = telethon.utils.get_peer_id(botme)
+            SMEX_USERS.append(botid)
+        except Exception as e:
+            print(e)
+            pass
+    else:
+        print("Session 2 not Found")
         pass
-else:
-    print("Session 2 not Found")
-    pass
-    session_name = "startup"
-    ydk = TelegramClient(session_name, a, b)
-    try:
-        ydk.start()
-    except Exception as e:
-        pass
+        session_name = "startup"
+        ydk = TelegramClient(session_name, a, b)
+        try:
+            ydk.start()
+        except Exception as e:
+            pass
 
-if smexxx:
-    session_name = str(smexxx)
-    print("String 3 Found")
-    wdk = TelegramClient(StringSession(session_name), a, b)
-    try:
-        print("Booting Up The Client 3")
-        wdk.start()
-        botme = wdk.get_me()
-        botid = telethon.utils.get_peer_id(botme)
-        SMEX_USERS.append(botid)
-    except Exception as e:
-        print(e)
+    if smexxx:
+        session_name = str(smexxx)
+        print("String 3 Found")
+        wdk = TelegramClient(StringSession(session_name), a, b)
+        try:
+            print("Booting Up The Client 3")
+            wdk.start()
+            botme = await wdk.get_me()
+            botid = telethon.utils.get_peer_id(botme)
+            SMEX_USERS.append(botid)
+        except Exception as e:
+            print(e)
+            pass
+    else:
+        print("Session 3 not Found")
         pass
-else:
-    print("Session 3 not Found")
-    pass
-    session_name = "startup"
-    wdk = TelegramClient(session_name, a, b)
-    try:
-        wdk.start()
-    except Exception as e:
-        pass
+        session_name = "startup"
+        wdk = TelegramClient(session_name, a, b)
+        try:
+            wdk.start()
+        except Exception as e:
+            pass
 
-if smexxxx:
-    session_name = str(smexxxx)
-    print("String 4 Found")
-    hdk = TelegramClient(StringSession(session_name), a, b)
-    try:
-        print("Booting Up The Client 4")
-        hdk.start()
-        botme = hdk.get_me()
-        botid = telethon.utils.get_peer_id(botme)
-        SMEX_USERS.append(botid)
-    except Exception as e:
-        print(e)
+    if smexxxx:
+        session_name = str(smexxxx)
+        print("String 4 Found")
+        hdk = TelegramClient(StringSession(session_name), a, b)
+        try:
+            print("Booting Up The Client 4")
+            hdk.start()
+            botme = await hdk.get_me()
+            botid = telethon.utils.get_peer_id(botme)
+            SMEX_USERS.append(botid)
+        except Exception as e:
+            print(e)
+            pass
+    else:
+        print("Session 4 not Found")
         pass
-else:
-    print("Session 4 not Found")
-    pass
-    session_name = "startup"
-    hdk = TelegramClient(session_name, a, b)
-    try:
-        hdk.start()
-    except Exception as e:
-        pass
+        session_name = "startup"
+        hdk = TelegramClient(session_name, a, b)
+        try:
+            hdk.start()
+        except Exception as e:
+            pass
 
-if smexxxxx:
-    session_name = str(smexxxxx)
-    print("String 5 Found")
-    sdk = TelegramClient(StringSession(session_name), a, b)
-    try:
-        print("Booting Up The Client 5")
-        sdk.start()
-        botme = sdk.get_me()
-        botid = telethon.utils.get_peer_id(botme)
-        SMEX_USERS.append(botid)
-    except Exception as e:
-        print(e)
+    if smexxxxx:
+        session_name = str(smexxxxx)
+        print("String 5 Found")
+        sdk = TelegramClient(StringSession(session_name), a, b)
+        try:
+            print("Booting Up The Client 5")
+            sdk.start()
+            botme = await sdk.get_me()
+            botid = telethon.utils.get_peer_id(botme)
+            SMEX_USERS.append(botid)
+        except Exception as e:
+            print(e)
+            pass
+    else:
+        print("Session 5 not Found")
         pass
-else:
-    print("Session 5 not Found")
-    pass
-    session_name = "startup"
-    sdk = TelegramClient(session_name, a, b)
-    try:
-        sdk.start()
-    except Exception as e:
-        pass
+        session_name = "startup"
+        sdk = TelegramClient(session_name, a, b)
+        try:
+            sdk.start()
+        except Exception as e:
+            pass
                   
-if sixth:
-    session_name = str(sixth)
-    print("String 6 Found")
-    sdk = TelegramClient(StringSession(session_name), a, b)
-    try:
-        print("Booting Up The Client 6")
-        adk.start()
-        botme = adk.get_me()
-        botid = telethon.utils.get_peer_id(botme)
-        SMEX_USERS.append(botid)
-    except Exception as e:
-        print(e)
+    if sixth:
+        session_name = str(sixth)
+        print("String 6 Found")
+        adk = TelegramClient(StringSession(session_name), a, b)
+        try:
+            print("Booting Up The Client 6")
+            adk.start()
+            botme = await adk.get_me()
+            botid = telethon.utils.get_peer_id(botme)
+            SMEX_USERS.append(botid)
+        except Exception as e:
+            print(e)
+                pass
+    else:
+        print("Session 6 not Found")
         pass
-else:
-    print("Session 6 not Found")
-    pass
-    session_name = "startup"
-    adk = TelegramClient(session_name, a, b)
-    try:
-        adk.start()
-    except Exception as e:
-        pass
+        session_name = "startup"
+        adk = TelegramClient(session_name, a, b)
+        try:
+            adk.start()
+        except Exception as e:
+            pass
 
-if seven:
-    session_name = str(seven)
-    print("String 7 Found")
-    sdk = TelegramClient(StringSession(session_name), a, b)
-    try:
-        print("Booting Up The Client 7")
-        bdk.start()
-        botme = bdk.get_me()
-        botid = telethon.utils.get_peer_id(botme)
-        SMEX_USERS.append(botid)
-    except Exception as e:
-        print(e)
+    if seven:
+        session_name = str(seven)
+        print("String 7 Found")
+        bdk = TelegramClient(StringSession(session_name), a, b)
+        try:
+            print("Booting Up The Client 7")
+            bdk.start()
+            botme = await bdk.get_me()
+            botid = telethon.utils.get_peer_id(botme)
+            SMEX_USERS.append(botid)
+        except Exception as e:
+            print(e)
+            pass
+    else:
+        print("Session 7 not Found")
         pass
-else:
-    print("Session 7 not Found")
-    pass
-    session_name = "startup"
-    bdk = TelegramClient(session_name, a, b)
-    try:
-        bdk.start()
-    except Exception as e:
-        pass    
+        session_name = "startup"
+        bdk = TelegramClient(session_name, a, b)
+        try:
+            bdk.start()
+        except Exception as e:
+            pass    
+        
     
-    
-if eight:
-    session_name = str(eight)
-    print("String 8 Found")
-    sdk = TelegramClient(StringSession(session_name), a, b)
-    try:
-        print("Booting Up The Client 8")
-        cdk.start()
-        botme = cdk.get_me()
-        botid = telethon.utils.get_peer_id(botme)
-        SMEX_USERS.append(botid)
-    except Exception as e:
-        print(e)
+    if eight:
+        session_name = str(eight)
+        print("String 8 Found")
+        cdk = TelegramClient(StringSession(session_name), a, b)
+        try:
+            print("Booting Up The Client 8")
+            cdk.start()
+            botme = await cdk.get_me()
+            botid = telethon.utils.get_peer_id(botme)
+            SMEX_USERS.append(botid)
+        except Exception as e:
+            print(e)
+            pass
+    else:
+        print("Session 8 not Found")
         pass
-else:
-    print("Session 8 not Found")
-    pass
-    session_name = "startup"
-    cdk = TelegramClient(session_name, a, b)
-    try:
-        cdk.start()
-    except Exception as e:
-        pass   
-    
-    
-if ninth:
-    session_name = str(ninth)
-    print("String 9 Found")
-    sdk = TelegramClient(StringSession(session_name), a, b)
-    try:
-        print("Booting Up The Client 9")
-        ddk.start()
-        botme = ddk.get_me()
-        botid = telethon.utils.get_peer_id(botme)
-        SMEX_USERS.append(botid)
-    except Exception as e:
-        print(e)
+        session_name = "startup"
+        cdk = TelegramClient(session_name, a, b)
+        try:
+            cdk.start()
+        except Exception as e:
+            pass   
+        
+    if ninth:
+        session_name = str(ninth)
+        print("String 9 Found")
+        ddk = TelegramClient(StringSession(session_name), a, b)
+        try:
+            print("Booting Up The Client 9")
+            ddk.start()
+            botme = await ddk.get_me()
+            botid = telethon.utils.get_peer_id(botme)
+            SMEX_USERS.append(botid)
+        except Exception as e:
+            print(e)
+            pass
+    else:
+        print("Session 9 not Found")
         pass
-else:
-    print("Session 9 not Found")
-    pass
-    session_name = "startup"
-    ddk = TelegramClient(session_name, a, b)
-    try:
-        ddk.start()
-    except Exception as e:
-        pass   
+        session_name = "startup"
+        ddk = TelegramClient(session_name, a, b)
+        try:
+            ddk.start()
+        except Exception as e:
+            pass   
     
   
-if tenth:
-    session_name = str(tenth)
-    print("String 10 Found")
-    sdk = TelegramClient(StringSession(session_name), a, b)
-    try:
-        print("Booting Up The Client 10")
-        edk.start()
-        botme = edk.get_me()
-        botid = telethon.utils.get_peer_id(botme)
-        SMEX_USERS.append(botid)
-    except Exception as e:
-        print(e)
+    if tenth:
+        session_name = str(tenth)
+        print("String 10 Found")
+        edk = TelegramClient(StringSession(session_name), a, b)
+        try:
+            print("Booting Up The Client 10")
+            edk.start()
+            botme = await edk.get_me()
+            botid = telethon.utils.get_peer_id(botme)
+            SMEX_USERS.append(botid)
+        except Exception as e:
+            print(e)
+            pass
+    else:
+        print("Session 10 not Found")
         pass
-else:
-    print("Session 10 not Found")
-    pass
-    session_name = "startup"
-    edk = TelegramClient(session_name, a, b)
-    try:
-        edk.start()
-    except Exception as e:
-        pass 
+        session_name = "startup"
+        edk = TelegramClient(session_name, a, b)
+        try:
+            edk.start()
+        except Exception as e:
+            pass 
     
     
 @idk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
@@ -384,7 +383,24 @@ async def help(e):
     if e.sender_id in SUDO:
        text = "Available Commands\n.spam\n.dspam\n.mspam\n.restart\n.ping"
        await e.reply(text, parse_mode=None, link_preview=None )
- 
+
+        
+
+
+
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(load_sudoers())        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 print("Started sucessfully")
 print(SMEX_USERS)    
 if len(sys.argv) not in (1, 3, 4):
