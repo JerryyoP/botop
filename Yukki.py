@@ -702,7 +702,7 @@ async def _(e):
             try:
                 queue = que.get(g)
                 queue.pop(0)
-            except Exception as e:
+            except Exception as f:
                 pass
             text = "De-Activated Reply Raid"
             await e.reply(text, parse_mode=None, link_preview=None )
@@ -713,7 +713,7 @@ async def _(e):
             try:
                 queue = que.get(g)
                 queue.pop(0)
-            except Exception as e:
+            except Exception as f:
                 pass
             text = "De-Activated Reply Raid"
             await e.reply(text, parse_mode=None, link_preview=None )
