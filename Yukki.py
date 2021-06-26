@@ -498,9 +498,9 @@ async def spam(e):
             message = str(yukki[1])
             print(message)
             a = await e.client.get_entity(message)
-            e = a.id
+            g = a.id
             c = a.first_name
-            username = f"[{c}](tg://user?id={e})"
+            username = f"[{c}](tg://user?id={g})"
             counter = int(yukki[0])
             for _ in range(counter):
                 reply = random.choice(RAID)
