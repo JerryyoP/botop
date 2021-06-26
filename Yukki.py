@@ -507,7 +507,7 @@ async def spam(e):
                 async with e.client.action(e.chat_id, "typing"):
                     await e.client.send_message(e.chat_id, caption)
                     await asyncio.sleep(sleeptimem)
-        elif e.reply_to_msg_id             
+        elif e.reply_to_msg_id:             
             a = await event.get_reply_message()
             b = await event.client.get_entity(a.sender_id)
             e = b.id
