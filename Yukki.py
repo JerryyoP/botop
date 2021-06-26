@@ -80,7 +80,10 @@ async def start_yukki():
         print("Session 1 not Found")
         session_name = "startup"
         idk = TelegramClient(session_name, a, b)
-        
+        try:
+            await idk.start()
+        except Exception as e:
+            pass
    
     if smexx:
         session_name = str(smexx)
