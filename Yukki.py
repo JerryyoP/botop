@@ -562,7 +562,7 @@ async def _(event):
 @cdk.on(events.NewMessage(incoming=True, pattern=".replyraid"))
 @edk.on(events.NewMessage(incoming=True, pattern=".replyraid"))
 @ddk.on(events.NewMessage(incoming=True, pattern=".replyraid"))
-async def _(event):
+async def _(e):
     global que
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱\n\nCommand:\n\n.replyraid <Username of User>\n\n.replyraid <reply to a User>"
     if e.sender_id in SMEX_USERS:
@@ -594,8 +594,16 @@ async def _(event):
             await e.reply(usage, parse_mode=None, link_preview=None )
 
             
-@bot.on(admin_cmd(pattern="dreplyraid(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="dreplyraid(?: |$)(.*)", allow_sudo=True))
+@idk.on(events.NewMessage(incoming=True, pattern=".dreplyraid"))
+@ydk.on(events.NewMessage(incoming=True, pattern=".dreplyraid"))
+@wdk.on(events.NewMessage(incoming=True, pattern=".dreplyraid"))
+@hdk.on(events.NewMessage(incoming=True, pattern=".dreplyraid"))
+@sdk.on(events.NewMessage(incoming=True, pattern=".dreplyraid"))
+@adk.on(events.NewMessage(incoming=True, pattern=".dreplyraid"))
+@bdk.on(events.NewMessage(incoming=True, pattern=".dreplyraid"))
+@cdk.on(events.NewMessage(incoming=True, pattern=".dreplyraid"))
+@edk.on(events.NewMessage(incoming=True, pattern=".dreplyraid"))
+@ddk.on(events.NewMessage(incoming=True, pattern=".dreplyraid"))
 async def _(event):
     global que
     if event.fwd_from:
