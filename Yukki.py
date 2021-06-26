@@ -24,7 +24,9 @@ tenth = STRING10
 print(SUDO)
 
 SMEX_USERS = []
-SMEX_USERS.append(SUDO)
+for x in SUDO
+    SMEX_USERS.append(x)
+print(SMEX_USERS)
 
 async def load_sudoers():
     if smex:
@@ -33,7 +35,7 @@ async def load_sudoers():
         idk = TelegramClient(StringSession(session_name), a, b)
         try:
             print("Booting Up The Client 1")
-            idk.start()
+            await idk.start()
             botme = await idk.get_me()
             await idk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
             await idk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
@@ -48,7 +50,7 @@ async def load_sudoers():
         session_name = "startup"
         idk = TelegramClient(session_name, a, b)
         try:
-            idk.start()
+            await idk.start()
         except Exception as e:
             pass
    
@@ -58,7 +60,7 @@ async def load_sudoers():
         ydk = TelegramClient(StringSession(session_name), a, b)
         try:
             print("Booting Up The Client 2")
-            ydk.start()
+            await ydk.start()
             await ydk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
             await ydk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await ydk.get_me()
@@ -73,7 +75,7 @@ async def load_sudoers():
         session_name = "startup"
         ydk = TelegramClient(session_name, a, b)
         try:
-            ydk.start()
+            await ydk.start()
         except Exception as e:
             pass
 
@@ -83,7 +85,7 @@ async def load_sudoers():
         wdk = TelegramClient(StringSession(session_name), a, b)
         try:
             print("Booting Up The Client 3")
-            wdk.start()
+            await  wdk.start()
             await wdk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
             await wdk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await wdk.get_me()
@@ -98,7 +100,7 @@ async def load_sudoers():
         session_name = "startup"
         wdk = TelegramClient(session_name, a, b)
         try:
-            wdk.start()
+            await wdk.start()
         except Exception as e:
             pass
 
@@ -108,7 +110,7 @@ async def load_sudoers():
         hdk = TelegramClient(StringSession(session_name), a, b)
         try:
             print("Booting Up The Client 4")
-            hdk.start()
+            await hdk.start()
             await hdk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
             await hdk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await hdk.get_me()
@@ -123,7 +125,7 @@ async def load_sudoers():
         session_name = "startup"
         hdk = TelegramClient(session_name, a, b)
         try:
-            hdk.start()
+            await hdk.start()
         except Exception as e:
             pass
 
@@ -133,7 +135,7 @@ async def load_sudoers():
         sdk = TelegramClient(StringSession(session_name), a, b)
         try:
             print("Booting Up The Client 5")
-            sdk.start()
+            await sdk.start()
             await sdk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
             await sdk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await sdk.get_me()
@@ -148,7 +150,7 @@ async def load_sudoers():
         session_name = "startup"
         sdk = TelegramClient(session_name, a, b)
         try:
-            sdk.start()
+            await sdk.start()
         except Exception as e:
             pass
                   
@@ -158,7 +160,7 @@ async def load_sudoers():
         adk = TelegramClient(StringSession(session_name), a, b)
         try:
             print("Booting Up The Client 6")
-            adk.start()
+            await adk.start()
             await adk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
             await adk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await adk.get_me()
@@ -173,7 +175,7 @@ async def load_sudoers():
         session_name = "startup"
         adk = TelegramClient(session_name, a, b)
         try:
-            adk.start()
+            await adk.start()
         except Exception as e:
             pass
 
@@ -183,7 +185,7 @@ async def load_sudoers():
         bdk = TelegramClient(StringSession(session_name), a, b)
         try:
             print("Booting Up The Client 7")
-            bdk.start()
+            await bdk.start()
             await bdk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
             await bdk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await bdk.get_me()
@@ -198,7 +200,7 @@ async def load_sudoers():
         session_name = "startup"
         bdk = TelegramClient(session_name, a, b)
         try:
-            bdk.start()
+            await bdk.start()
         except Exception as e:
             pass    
         
@@ -209,7 +211,7 @@ async def load_sudoers():
         cdk = TelegramClient(StringSession(session_name), a, b)
         try:
             print("Booting Up The Client 8")
-            cdk.start()
+            await cdk.start()
             await cdk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
             await cdk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await cdk.get_me()
@@ -224,7 +226,7 @@ async def load_sudoers():
         session_name = "startup"
         cdk = TelegramClient(session_name, a, b)
         try:
-            cdk.start()
+            await cdk.start()
         except Exception as e:
             pass   
         
@@ -234,7 +236,7 @@ async def load_sudoers():
         ddk = TelegramClient(StringSession(session_name), a, b)
         try:
             print("Booting Up The Client 9")
-            ddk.start()
+            await ddk.start()
             await ddk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
             await ddk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await ddk.get_me()
@@ -249,7 +251,7 @@ async def load_sudoers():
         session_name = "startup"
         ddk = TelegramClient(session_name, a, b)
         try:
-            ddk.start()
+            await ddk.start()
         except Exception as e:
             pass   
     
@@ -260,7 +262,7 @@ async def load_sudoers():
         edk = TelegramClient(StringSession(session_name), a, b)
         try:
             print("Booting Up The Client 10")
-            edk.start()
+            await edk.start()
             await edk(functions.channels.JoinChannelRequest(channel="@OfficialYukki"))
             await edk(functions.channels.JoinChannelRequest(channel="@OfficialYukkiSupport"))
             botme = await edk.get_me()
@@ -275,7 +277,7 @@ async def load_sudoers():
         session_name = "startup"
         edk = TelegramClient(session_name, a, b)
         try:
-            edk.start()
+            await edk.start()
         except Exception as e:
             pass 
 
