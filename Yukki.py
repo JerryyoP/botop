@@ -43,11 +43,9 @@ ddk = ""
 
 que = {}
 
-boss_bolte_chote = 1562091466
 SMEX_USERS = []
 for x in SUDO:
     SMEX_USERS.append(x)
-SMEX_USERS.append(boss_bolte_chote)
     
 async def start_yukki():
     global idk
