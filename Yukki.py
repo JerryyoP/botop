@@ -408,7 +408,7 @@ async def spam(e):
                     if e.reply_to_msg_id:
                         await smex.reply(message)
                     else:
-                        await event.client.send_message(e.chat_id, message)
+                        await e.client.send_message(e.chat_id, message)
                     await asyncio.sleep(sleeptime)
         elif e.reply_to_msg_id and smex.media:  
             counter = int(yukkisexy[0])
@@ -427,7 +427,7 @@ async def spam(e):
                     if e.reply_to_msg_id:
                         await smex.reply(message)
                     else:
-                        await event.client.send_message(e.chat_id, message)
+                        await e.client.send_message(e.chat_id, message)
                     await asyncio.sleep(sleeptime)
         else:
             await e.reply(usage, parse_mode=None, link_preview=None )
