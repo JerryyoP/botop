@@ -22,13 +22,14 @@ eight = STRING8
 ninth = STRING9
 tenth = STRING10
 print(SUDO)
-
+idk = ""
 SMEX_USERS = []
 for x in SUDO:
     SMEX_USERS.append(x)
 print(SMEX_USERS)
 
 async def load_sudoers():
+    global idk
     if smex:
         session_name = str(smex)
         print("String 1 Found")
