@@ -404,17 +404,17 @@ async def spam(e):
             counter = int(yukkisexy[0])
             sleeptime = float(yukki[0])
             for _ in range(counter):
-                async with e.client.action(event.chat_id, "typing"):
+                async with e.client.action(e.chat_id, "typing"):
                     if e.reply_to_msg_id:
                         await smex.reply(message)
                     else:
-                        await event.client.send_message(event.chat_id, message)
+                        await event.client.send_message(e.chat_id, message)
                     await asyncio.sleep(sleeptime)
         elif e.reply_to_msg_id and smex.media:  
             counter = int(yukkisexy[0])
             sleeptime = float(yukki[0])
             for _ in range(counter):
-                async with e.client.action(event.chat_id, "document"):
+                async with e.client.action(e.chat_id, "document"):
                     smex = await e.client.send_file(e.chat_id, smex, caption=smex.text)
                     await gifspam(e, smex) 
                 await asyncio.sleep(sleeptime)
@@ -423,11 +423,11 @@ async def spam(e):
             counter = int(yukkisexy[0])
             sleeptime = float(yukki[0])
             for _ in range(counter):
-                async with e.client.action(event.chat_id, "typing"):
+                async with e.client.action(e.chat_id, "typing"):
                     if e.reply_to_msg_id:
                         await smex.reply(message)
                     else:
-                        await event.client.send_message(event.chat_id, message)
+                        await event.client.send_message(e.chat_id, message)
                     await asyncio.sleep(sleeptime)
         else:
             await e.reply(usage, parse_mode=None, link_preview=None )
