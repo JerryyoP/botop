@@ -33,7 +33,7 @@ if smex:
     try:
         print("Booting Up The Client 1")
         idk.start()
-        botme = await idk.get_me()
+        botme = idk.get_me()
         botid = telethon.utils.get_peer_id(botme)
         SMEX_USERS.append(botid)
     except Exception as e:
