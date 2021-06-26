@@ -13,6 +13,8 @@ from telethon.tl import functions
 from telethon.tl.functions.channels import LeaveChannelRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
 from Utils import RAID, RRAID
+
+
 a = API_ID
 b = API_HASH
 smex = STRING
@@ -25,6 +27,8 @@ seven = STRING7
 eight = STRING8
 ninth = STRING9
 tenth = STRING10
+
+
 idk = ""
 ydk = ""
 wdk = ""
@@ -35,11 +39,16 @@ bdk = ""
 cdk = ""
 edk = ""
 ddk = ""
+
+
 que = {}
+
+
 SMEX_USERS = []
 for x in SUDO:
     SMEX_USERS.append(x)
 
+    
 async def start_yukki():
     global idk
     global ydk
@@ -741,9 +750,9 @@ async def _(e):
 @ddk.on(events.NewMessage(incoming=True, pattern=".ping"))
 async def ping(e):
     if e.sender_id in SMEX_USERS:
+        start = datetime.now()
         text = "Pong!"
         event = await e.reply(text, parse_mode=None, link_preview=None )
-        start = datetime.now()
         end = datetime.now()
         ms = (end-start).microseconds / 1000
         await event.edit(f"🤖 𝗣𝗼𝗻𝗴!\n`{ms}` 𝗺𝘀")
@@ -832,20 +841,15 @@ async def help(e):
 
         
 
-
-
-     
+    
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-print("Started sucessfully")
+print("
+██╗░░░██╗██╗░░░██╗██╗░░██╗██╗░░██╗██╗
+╚██╗░██╔╝██║░░░██║██║░██╔╝██║░██╔╝██║
+░╚████╔╝░██║░░░██║█████═╝░█████═╝░██║
+░░╚██╔╝░░██║░░░██║██╔═██╗░██╔═██╗░██║
+░░░██║░░░╚██████╔╝██║░╚██╗██║░╚██╗██║
+░░░╚═╝░░░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝")
 
 if len(sys.argv) not in (1, 3, 4):
     try:
