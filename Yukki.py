@@ -24,7 +24,7 @@ tenth = STRING10
 print(SUDO)
 
 SMEX_USERS = []
-for x in SUDO
+for x in SUDO:
     SMEX_USERS.append(x)
 print(SMEX_USERS)
 
