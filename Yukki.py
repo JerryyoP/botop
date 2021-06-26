@@ -335,8 +335,9 @@ async def gifspam(e, smex):
 async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗕𝗶𝗼\n\nCommand:\n\n.bio <Message to set Bio of Userbot accounts>"
     if e.sender_id in SMEX_USERS:
-        yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-        smex = await e.get_reply_message()
+        yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)     
+        smex = e.text
+        print(len(smex))
         if len(e.text) > 3:
             bio = str(yukki[0])
             text = "Changing Bio"
@@ -363,7 +364,6 @@ async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗝𝗼𝗶𝗻\n\nCommand:\n\n.join <Public Channel or Group Link/Username>"
     if e.sender_id in SMEX_USERS:
         yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-        smex = await e.get_reply_message()
         if len(yukki) == 2:
             bc = yukki[0]
             text = "Joining..."
@@ -390,7 +390,6 @@ async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗣𝗿𝗶𝘃𝗮𝘁𝗲 𝗝𝗼𝗶𝗻\n\nCommand:\n\n.pjoin <Private Channel or Group's access hash>\n\nExample :\nLink = https://t.me/joinchat/HGYs1wvsPUplMmM1\n\n.pjoin HGYs1wvsPUplMmM1"
     if e.sender_id in SMEX_USERS:
         yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-        smex = await e.get_reply_message()
         if len(yukki) == 2:
             bc = yukki[0]
             text = "Joining...."
@@ -418,7 +417,6 @@ async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗟𝗲𝗮𝘃𝗲\n\nCommand:\n\n.leave <Channel or Chat ID>"
     if e.sender_id in SMEX_USERS:
         yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-        smex = await e.get_reply_message()
         if len(yukki) == 2:
             bc = yukki[0]
             bc = int(bc)
