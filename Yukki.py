@@ -10,7 +10,7 @@ from Config import STRING, SUDO, BIO_MESSAGE, API_ID, API_HASH, STRING2, STRING3
 import asyncio
 import telethon.utils
 from telethon.tl import functions
-from Utils import RAID
+from Utils import RAID, RRAID
 a = API_ID
 b = API_HASH
 smex = STRING
