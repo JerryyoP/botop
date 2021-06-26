@@ -358,7 +358,7 @@ async def _(e):
 @edk.on(events.NewMessage(incoming=True, pattern=".spam"))
 @ddk.on(events.NewMessage(incoming=True, pattern=".spam"))
 async def spam(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗦𝗽𝗮𝗺\n\nCommand:\n\n .spam <count> <message to spam`\n\n.spam <count> <reply to a message>\n\nCount must be a interger."
+    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗦𝗽𝗮𝗺\n\nCommand:\n\n.spam <count> <message to spam>\n\n.spam <count> <reply to a message>\n\nCount must be a integer."
     if e.sender_id in SMEX_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
@@ -381,9 +381,67 @@ async def spam(e):
             await e.reply(usage, parse_mode=None, link_preview=None )
             
 
+@idk.on(events.NewMessage(incoming=True, pattern=".delayspam"))
+@ydk.on(events.NewMessage(incoming=True, pattern=".delayspam"))
+@wdk.on(events.NewMessage(incoming=True, pattern=".delayspam"))
+@hdk.on(events.NewMessage(incoming=True, pattern=".delayspam"))
+@sdk.on(events.NewMessage(incoming=True, pattern=".delayspam"))
+@adk.on(events.NewMessage(incoming=True, pattern=".delayspam"))
+@bdk.on(events.NewMessage(incoming=True, pattern=".delayspam"))
+@cdk.on(events.NewMessage(incoming=True, pattern=".delayspam"))
+@edk.on(events.NewMessage(incoming=True, pattern=".delayspam"))
+@ddk.on(events.NewMessage(incoming=True, pattern=".delayspam"))
+async def spam(e):
+    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗗𝗲𝗹𝗮𝘆𝗦𝗽𝗮𝗺\n\nCommand:\n\n.delayspam <sleep time> <count> <message to spam>\n\n.delayspam <sleep time> <count> <reply to a message>\n\nCount and Sleeptime must be a integer."
+    if e.sender_id in SMEX_USERS:
+        if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
+            return await e.reply(usage, parse_mode=None, link_preview=None )
+        smex = await e.get_reply_message()
+        yukki = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
+        yukkisexy = yukki[1:]
+        if len(yukkisexy) == 2:
+            message = str(yukkisexy[1])
+            counter = int(yukkisexy[0])
+            sleeptime = float(yukki[0])
+            for _ in range(counter):
+                async with e.client.action(event.chat_id, "typing"):
+                    if e.reply_to_msg_id:
+                        await smex.reply(message)
+                    else:
+                        await event.client.send_message(event.chat_id, message)
+                    await asyncio.sleep(sleeptime)
+        elif e.reply_to_msg_id and smex.media:  
+            counter = int(yukkisexy[0])
+            sleeptime = float(yukki[0])
+            for _ in range(counter):
+                async with e.client.action(event.chat_id, "document"):
+                    smex = await e.client.send_file(e.chat_id, smex, caption=smex.text)
+                    await gifspam(e, smex) 
+                await asyncio.sleep(sleeptime)
+        elif e.reply_to_msg_id and smex.text:
+            message = smex.text
+            counter = int(yukkisexy[0])
+            sleeptime = float(yukki[0])
+            for _ in range(counter):
+                async with e.client.action(event.chat_id, "typing"):
+                    if e.reply_to_msg_id:
+                        await smex.reply(message)
+                    else:
+                        await event.client.send_message(event.chat_id, message)
+                    await asyncio.sleep(sleeptime)
+        else:
+            await e.reply(usage, parse_mode=None, link_preview=None )
 
 
-@idk.on(events.NewMessage(incoming=True, pattern=".dspam"))
+
+
+
+
+
+
+
+
+
 async def dspam(e):
     if e.sender_id in SUDO:
         input_str = "".join(e.text.split(maxsplit=1)[1:])
