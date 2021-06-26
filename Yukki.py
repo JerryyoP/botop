@@ -166,7 +166,7 @@ async def load_sudoers():
             SMEX_USERS.append(botid)
         except Exception as e:
             print(e)
-                pass
+            pass
     else:
         print("Session 6 not Found")
         pass
