@@ -496,18 +496,8 @@ async def spam(e):
         smex = await e.get_reply_message()
         if len(yukki) == 2:
             message = str(yukki[1])
-            usern = random.choice(message)
-            a = await e.client.get_entity(usern)
-            e = a.id
-            c = a.first_name
-            username = f"[{c}](tg://user?id={e})"
-            counter = int(yukki[0])
-            for _ in range(counter):
-                reply = random.choice(RAID)
-                caption = f"{username} {reply}"
-                async with e.client.action(e.chat_id, "typing"):
-                    await e.client.send_message(e.chat_id, caption)
-                    await asyncio.sleep(sleeptimem)
+            print(message)
+            
         elif e.reply_to_msg_id:             
             a = await e.get_reply_message()
             b = await e.client.get_entity(a.sender_id)
@@ -516,7 +506,7 @@ async def spam(e):
             counter = int(yukki[0])
             username = f"[{c}](tg://user?id={e})"
             for _ in range(counter):
-                reply = random.choice(U.RAID)
+                reply = random.choice(RAID)
                 caption = f"{username} {reply}"
                 async with e.client.action(e.chat_id, "typing"):
                     await e.client.send_message(e.chat_id, caption)
