@@ -188,7 +188,7 @@ else:
         pass    
     
     
- if eight:
+if eight:
     session_name = str(eight)
     print("String 8 Found")
     sdk = TelegramClient(StringSession(session_name), a, b)
@@ -212,7 +212,7 @@ else:
         pass   
     
     
- if ninth:
+if ninth:
     session_name = str(ninth)
     print("String 9 Found")
     sdk = TelegramClient(StringSession(session_name), a, b)
