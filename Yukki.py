@@ -738,16 +738,16 @@ async def _(e):
     
        
 
-@idk.on(events.NewMessage(incoming=True, pattern=".ping"))
-@ydk.on(events.NewMessage(incoming=True, pattern=".ping"))
-@wdk.on(events.NewMessage(incoming=True, pattern=".ping"))
-@hdk.on(events.NewMessage(incoming=True, pattern=".ping"))
-@sdk.on(events.NewMessage(incoming=True, pattern=".ping"))
-@adk.on(events.NewMessage(incoming=True, pattern=".ping"))
-@bdk.on(events.NewMessage(incoming=True, pattern=".ping"))
-@cdk.on(events.NewMessage(incoming=True, pattern=".ping"))
-@edk.on(events.NewMessage(incoming=True, pattern=".ping"))
-@ddk.on(events.NewMessage(incoming=True, pattern=".ping"))
+@idk.on(events.NewMessage(incoming=True, pattern="^.ping"))
+@ydk.on(events.NewMessage(incoming=True, pattern="^.ping"))
+@wdk.on(events.NewMessage(incoming=True, pattern="^.ping"))
+@hdk.on(events.NewMessage(incoming=True, pattern="^.ping"))
+@sdk.on(events.NewMessage(incoming=True, pattern="^.ping"))
+@adk.on(events.NewMessage(incoming=True, pattern="^.ping"))
+@bdk.on(events.NewMessage(incoming=True, pattern="^.ping"))
+@cdk.on(events.NewMessage(incoming=True, pattern="^.ping"))
+@edk.on(events.NewMessage(incoming=True, pattern="^.ping"))
+@ddk.on(events.NewMessage(incoming=True, pattern="^.ping"))
 async def ping(e):
     if e.sender_id in SMEX_USERS:
         start = datetime.now()
