@@ -1,6 +1,6 @@
 import os
 import sys
-import randmom
+import random
 from datetime import datetime
 from os import execl
 from telethon import TelegramClient, events
