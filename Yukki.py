@@ -365,7 +365,7 @@ async def spam(e):
         yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         smex = await e.get_reply_message()
         if len(yukki) == 2:
-            message = int(yukki[1])
+            message = str(yukki[1])
             counter = int(yukki[0])
             await asyncio.wait([e.respond(message) for i in range(counter)])
         elif e.reply_to_msg_id and smex.media:  
