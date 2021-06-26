@@ -302,7 +302,23 @@ async def load_sudoers():
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(load_sudoers())       
-    
+
+async def gifspam(e, smex):
+    try:
+        await e.client(
+            functions.messages.SaveGifRequest(
+                id=types.InputDocument(
+                    id=sandy.media.document.id,
+                    access_hash=smex.media.document.access_hash,
+                    file_reference=smex.media.document.file_reference,
+                ),
+                unsave=True,
+            )
+        )
+    except Exception as e:
+        pass
+
+
 @idk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
 @ydk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
 @wdk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
@@ -313,17 +329,17 @@ loop.run_until_complete(load_sudoers())
 @cdk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
 @edk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
 @ddk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))        
-async def _(event):
-    if event.fwd_from:
+async def _(e):
+    if e.fwd_from:
         return
-    if event.sender_id not in SMEX_USERS:
+    if e.sender_id not in SMEX_USERS:
         return
-    bio = event.pattern_match.group(1)
-    await event.delete()
+    bio = e.pattern_match.group(1)
+    await e.delete()
     text = "Changing Bio"
     event = await e.reply(text, parse_mode=None, link_preview=None )
     try:
-        await event.client(functions.account.UpdateProfileRequest(about=bio))
+        await e.client(functions.account.UpdateProfileRequest(about=bio))
         await event.edit("Succesfully Changed Bio")
     except Exception as e:
         await event.edit(str(e))        
@@ -342,17 +358,26 @@ async def _(event):
 @edk.on(events.NewMessage(incoming=True, pattern=".spam"))
 @ddk.on(events.NewMessage(incoming=True, pattern=".spam"))
 async def spam(e):
-    usage = "<b>Module Name = Spam\n\nCommand:</b> `.spam <count> <message to spam>`\n\n`.spam <count> <reply to a message>`"
-    event = await e.reply(usage, parse_mode=None, link_preview=None )
+    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗦𝗽𝗮𝗺\n\nCommand:\n\n .spam <count> <message to spam`\n\n.spam <count> <reply to a message>\n\nCount must be a interger."
     if e.sender_id in SMEX_USERS:
-        if e.reply_to_msg_id:
-            a = await e.get_reply_message()
-            if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-                idk = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-                message = str(idk[1])
-            counter = int(idk[0])
-            chut=  await asyncio.wait([e.respond(message) for i in range(counter)])
-            await e.delete()
+        if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
+            return await e.reply(usage, parse_mode=None, link_preview=None )
+        yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+        counter = int(yukki[0])
+        smex = await e.get_reply_message()
+        if len(cat) == 2:
+            message = int(yukki[1])
+            await asyncio.wait([e.respond(message) for i in range(counter)])
+        elif e.reply_to_msg_id and smex.media:  
+            for _ in range(counter):
+                smex = await e.client.send_file(e.chat_id, smex, caption=smex.text)
+                await gifspam(e, smex)  
+        elif e.reply_to_msg_id and smex.text:
+            message = smex.text
+            await asyncio.wait([e.respond(message) for i in range(counter)])
+        else:
+            await e.reply(usage, parse_mode=None, link_preview=None )
+            
 
 
 
