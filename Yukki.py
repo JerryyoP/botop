@@ -336,8 +336,7 @@ async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗕𝗶𝗼\n\nCommand:\n\n.bio <Message to set Bio of Userbot accounts>"
     if e.sender_id in SMEX_USERS:
         yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)     
-        print(len(e.text))
-        if len(yukki) > 0:
+        if len(e.text) > 5:
             bio = str(yukki[0])
             text = "Changing Bio"
             event = await e.reply(text, parse_mode=None, link_preview=None )
@@ -363,7 +362,7 @@ async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗝𝗼𝗶𝗻\n\nCommand:\n\n.join <Public Channel or Group Link/Username>"
     if e.sender_id in SMEX_USERS:
         yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-        if len(yukki) == 2:
+        if len(e.text) > 6:
             bc = yukki[0]
             text = "Joining..."
             event = await e.reply(text, parse_mode=None, link_preview=None )
@@ -389,7 +388,7 @@ async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗣𝗿𝗶𝘃𝗮𝘁𝗲 𝗝𝗼𝗶𝗻\n\nCommand:\n\n.pjoin <Private Channel or Group's access hash>\n\nExample :\nLink = https://t.me/joinchat/HGYs1wvsPUplMmM1\n\n.pjoin HGYs1wvsPUplMmM1"
     if e.sender_id in SMEX_USERS:
         yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-        if len(yukki) == 2:
+        if len(e.text) > 7:
             bc = yukki[0]
             text = "Joining...."
             event = await e.reply(text, parse_mode=None, link_preview=None )
@@ -416,7 +415,7 @@ async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗟𝗲𝗮𝘃𝗲\n\nCommand:\n\n.leave <Channel or Chat ID>"
     if e.sender_id in SMEX_USERS:
         yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-        if len(yukki) == 2:
+        if len(e.text) == 7:
             bc = yukki[0]
             bc = int(bc)
             text = "Leaving....."
@@ -654,7 +653,7 @@ async def _(e):
             return await e.reply(usage, parse_mode=None, link_preview=None )
         yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         smex = await e.get_reply_message()
-        if len(yukki) == 2:
+        if len(e.text) > 11:
             message = str(yukki[0])
             a = await e.client.get_entity(message)
             g = a.id
@@ -688,7 +687,7 @@ async def _(e):
 @cdk.on(events.NewMessage(incoming=True, pattern=".dreplyraid"))
 @edk.on(events.NewMessage(incoming=True, pattern=".dreplyraid"))
 @ddk.on(events.NewMessage(incoming=True, pattern=".dreplyraid"))
-async def _(event):
+async def _(e):
     global que
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗗𝗲𝗮𝗰𝘁𝗶𝘃𝗮𝘁𝗲 𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱\n\nCommand:\n\n.dreplyraid <Username of User>\n\n.dreplyraid <reply to a User>"
     if e.sender_id in SMEX_USERS:
@@ -696,7 +695,7 @@ async def _(event):
             return await e.reply(usage, parse_mode=None, link_preview=None )
         yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         smex = await e.get_reply_message()
-        if len(yukki) == 2:
+        if len(e.text) > 12:
             message = str(yukki[0])
             a = await e.client.get_entity(message)
             g = a.id
