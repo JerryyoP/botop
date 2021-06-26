@@ -320,32 +320,117 @@ async def gifspam(e, smex):
         pass
 
 
-@idk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
-@ydk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
-@wdk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
-@hdk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
-@sdk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
-@adk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
-@bdk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
-@cdk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
-@edk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
-@ddk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))        
+@idk.on(events.NewMessage(incoming=True, pattern=".bio"))
+@ydk.on(events.NewMessage(incoming=True, pattern=".bio"))
+@wdk.on(events.NewMessage(incoming=True, pattern=".bio"))
+@hdk.on(events.NewMessage(incoming=True, pattern=".bio"))
+@sdk.on(events.NewMessage(incoming=True, pattern=".bio"))
+@adk.on(events.NewMessage(incoming=True, pattern=".bio"))
+@bdk.on(events.NewMessage(incoming=True, pattern=".bio"))
+@cdk.on(events.NewMessage(incoming=True, pattern=".bio"))
+@edk.on(events.NewMessage(incoming=True, pattern=".bio"))
+@ddk.on(events.NewMessage(incoming=True, pattern=".bio"))        
 async def _(e):
-    if e.fwd_from:
-        return
-    if e.sender_id not in SMEX_USERS:
-        return
-    bio = e.pattern_match.group(1)
-    await e.delete()
-    text = "Changing Bio"
-    event = await e.reply(text, parse_mode=None, link_preview=None )
-    try:
-        await e.client(functions.account.UpdateProfileRequest(about=bio))
-        await event.edit("Succesfully Changed Bio")
-    except Exception as e:
-        await event.edit(str(e))        
+    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗕𝗶𝗼\n\nCommand:\n\n.bio <Message to set Bio of Userbot accounts>"
+    if e.sender_id in SMEX_USERS:
+        yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+        smex = await e.get_reply_message()
+        if len(yukki) == 2:
+            bio = str(yukki[0])
+            text = "Changing Bio"
+            event = await e.reply(text, parse_mode=None, link_preview=None )
+            try:
+                await e.client(functions.account.UpdateProfileRequest(about=bio))
+                await event.edit("Succesfully Changed Bio")
+            except Exception as e:
+                await event.edit(str(e))   
+        else:
+            await e.reply(usage, parse_mode=None, link_preview=None )
+            
+@idk.on(events.NewMessage(incoming=True, pattern=".join"))
+@ydk.on(events.NewMessage(incoming=True, pattern=".join"))
+@wdk.on(events.NewMessage(incoming=True, pattern=".join"))
+@hdk.on(events.NewMessage(incoming=True, pattern=".join"))
+@sdk.on(events.NewMessage(incoming=True, pattern=".join"))
+@adk.on(events.NewMessage(incoming=True, pattern=".join"))
+@bdk.on(events.NewMessage(incoming=True, pattern=".join"))
+@cdk.on(events.NewMessage(incoming=True, pattern=".join"))
+@edk.on(events.NewMessage(incoming=True, pattern=".join"))
+@ddk.on(events.NewMessage(incoming=True, pattern=".join"))        
+async def _(e):
+    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗝𝗼𝗶𝗻\n\nCommand:\n\n.join <Public Channel or Group Link/Username>"
+    if e.sender_id in SMEX_USERS:
+        yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+        smex = await e.get_reply_message()
+        if len(yukki) == 2:
+            bc = yukki[0]
+            text = "Joining..."
+            event = await e.reply(text, parse_mode=None, link_preview=None )
+            try:
+                await e.client(functions.channels.JoinChannelRequest(channel=bc))
+                await event.edit("Succesfully Joined")
+            except Exception as e:
+                await event.edit(str(e))   
+        else:
+            await e.reply(usage, parse_mode=None, link_preview=None )
+            
+@idk.on(events.NewMessage(incoming=True, pattern=".pjoin"))
+@ydk.on(events.NewMessage(incoming=True, pattern=".pjoin"))
+@wdk.on(events.NewMessage(incoming=True, pattern=".pjoin"))
+@hdk.on(events.NewMessage(incoming=True, pattern=".pjoin"))
+@sdk.on(events.NewMessage(incoming=True, pattern=".pjoin"))
+@adk.on(events.NewMessage(incoming=True, pattern=".pjoin"))
+@bdk.on(events.NewMessage(incoming=True, pattern=".pjoin"))
+@cdk.on(events.NewMessage(incoming=True, pattern=".pjoin"))
+@edk.on(events.NewMessage(incoming=True, pattern=".pjoin"))
+@ddk.on(events.NewMessage(incoming=True, pattern=".pjoin"))        
+async def _(e):
+    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗣𝗿𝗶𝘃𝗮𝘁𝗲 𝗝𝗼𝗶𝗻\n\nCommand:\n\n.pjoin <Private Channel or Group's access hash>\n\nExample :\nLink = https://t.me/joinchat/HGYs1wvsPUplMmM1\n\n.pjoin HGYs1wvsPUplMmM1"
+    if e.sender_id in SMEX_USERS:
+        yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+        smex = await e.get_reply_message()
+        if len(yukki) == 2:
+            bc = yukki[0]
+            text = "Joining...."
+            event = await e.reply(text, parse_mode=None, link_preview=None )
+            try:
+                await e.client(ImportChatInviteRequest(bc))
+                await event.edit("Succesfully Joined")
+            except Exception as e:
+                await event.edit(str(e))   
+        else:
+            await e.reply(usage, parse_mode=None, link_preview=None )
+            
         
-        
+@idk.on(events.NewMessage(incoming=True, pattern=".leave"))
+@ydk.on(events.NewMessage(incoming=True, pattern=".leave"))
+@wdk.on(events.NewMessage(incoming=True, pattern=".leave"))
+@hdk.on(events.NewMessage(incoming=True, pattern=".leave"))
+@sdk.on(events.NewMessage(incoming=True, pattern=".leave"))
+@adk.on(events.NewMessage(incoming=True, pattern=".leave"))
+@bdk.on(events.NewMessage(incoming=True, pattern=".leave"))
+@cdk.on(events.NewMessage(incoming=True, pattern=".leave"))
+@edk.on(events.NewMessage(incoming=True, pattern=".leave"))
+@ddk.on(events.NewMessage(incoming=True, pattern=".leave"))        
+async def _(e):
+    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗟𝗲𝗮𝘃𝗲\n\nCommand:\n\n.leave <Channel or Chat ID>"
+    if e.sender_id in SMEX_USERS:
+        yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+        smex = await e.get_reply_message()
+        if len(yukki) == 2:
+            bc = yukki[0]
+            bc = int(bc)
+            text = "Leaving....."
+            event = await e.reply(text, parse_mode=None, link_preview=None )
+            try:
+                await event.client(LeaveChannelRequest(bc))
+                await event.edit("Succesfully Left")
+            except Exception as e:
+                await event.edit(str(e))   
+        else:
+            await e.reply(usage, parse_mode=None, link_preview=None )
+            
+                
         
         
 @idk.on(events.NewMessage(incoming=True, pattern=".spam"))
@@ -442,7 +527,7 @@ async def spam(e):
 @edk.on(events.NewMessage(incoming=True, pattern=".bigspam"))
 @ddk.on(events.NewMessage(incoming=True, pattern=".bigspam"))
 async def spam(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗕𝗶𝗴𝗦𝗽𝗮𝗺\nCommand:\n\n.bigspam <count> <message to spam>\n\n.bigspam <count> <reply to a message>\n\nCount must be a integer."
+    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗕𝗶𝗴𝗦𝗽𝗮𝗺\n\nCommand:\n\n.bigspam <count> <message to spam>\n\n.bigspam <count> <reply to a message>\n\nCount must be a integer."
     if e.sender_id in SMEX_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
@@ -487,7 +572,7 @@ async def spam(e):
 @edk.on(events.NewMessage(incoming=True, pattern=".raid"))
 @ddk.on(events.NewMessage(incoming=True, pattern=".raid"))
 async def spam(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗮𝗶𝗱\nCommand:\n\n.raid <count> <Username of User>\n\n.raid <count> <reply to a User>\n\nCount must be a integer."
+    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗮𝗶𝗱\n\nCommand:\n\n.raid <count> <Username of User>\n\n.raid <count> <reply to a User>\n\nCount must be a integer."
     if e.sender_id in SMEX_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
@@ -606,34 +691,32 @@ async def _(e):
 @ddk.on(events.NewMessage(incoming=True, pattern=".dreplyraid"))
 async def _(event):
     global que
-    if event.fwd_from:
-        return
-    if event.reply_to_msg_id:
-        a = await event.get_reply_message()
-        b = await event.client.get_entity(a.sender_id)
-        e = b.id
-        c = b.first_name
-        username = f"[{c}](tg://user?id={e})"
-        event = await edit_or_reply(event, "Reply Raid De-activating....")
-        queue = que.get(e)
-        queue.pop(0)
-        await event.edit(f"Reply Raid has been De-activated on {username}")
-    else:
-        user = event.pattern_match.group(1)
-        event = await edit_or_reply(event, "Reply Raid De-activating....")
-        a = await event.client.get_entity(user)
-        e = a.id
-        c = a.first_name
-        username = f"[{c}](tg://user?id={e})"
-        queue = que.get(e)
-        queue.pop(0)
-        await event.edit(f"Reply Raid has been De-activated on {username}")            
-            
-            
-            
-            
-            
-            
+    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗗𝗲𝗮𝗰𝘁𝗶𝘃𝗮𝘁𝗲 𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱\n\nCommand:\n\n.dreplyraid <Username of User>\n\n.dreplyraid <reply to a User>"
+    if e.sender_id in SMEX_USERS:
+        if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
+            return await e.reply(usage, parse_mode=None, link_preview=None )
+        yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+        smex = await e.get_reply_message()
+        if len(yukki) == 2:
+            message = str(yukki[0])
+            a = await e.client.get_entity(message)
+            g = a.id
+            queue = que.get(g)
+            queue.pop(0)
+            text = "De-Activated Reply Raid"
+            await e.reply(text, parse_mode=None, link_preview=None )
+        elif e.reply_to_msg_id:             
+            a = await e.get_reply_message()
+            b = await e.client.get_entity(a.sender_id)
+            g = b.id
+            queue = que.get(g)
+            queue.pop(0)
+            text = "De-Activated Reply Raid"
+            await e.reply(text, parse_mode=None, link_preview=None )
+        else:
+            await e.reply(usage, parse_mode=None, link_preview=None )
+    
+       
 
 @idk.on(events.NewMessage(incoming=True, pattern=".ping"))
 @ydk.on(events.NewMessage(incoming=True, pattern=".ping"))
@@ -656,6 +739,8 @@ async def ping(e):
 
 
 
+        
+        
 
 @idk.on(events.NewMessage(incoming=True, pattern=".restart"))
 @ydk.on(events.NewMessage(incoming=True, pattern=".restart"))
@@ -714,10 +799,24 @@ async def restart(e):
         os.execl(sys.executable, sys.executable, *sys.argv)
         quit()
 
+        
+        
+        
+        
+        
 @idk.on(events.NewMessage(incoming=True, pattern=".help"))
+@ydk.on(events.NewMessage(incoming=True, pattern=".help"))
+@wdk.on(events.NewMessage(incoming=True, pattern=".help"))
+@hdk.on(events.NewMessage(incoming=True, pattern=".help"))
+@sdk.on(events.NewMessage(incoming=True, pattern=".help"))
+@adk.on(events.NewMessage(incoming=True, pattern=".help"))
+@bdk.on(events.NewMessage(incoming=True, pattern=".help"))
+@cdk.on(events.NewMessage(incoming=True, pattern=".help"))
+@edk.on(events.NewMessage(incoming=True, pattern=".help"))
+@ddk.on(events.NewMessage(incoming=True, pattern=".help"))
 async def help(e):
     if e.sender_id in SMEX_USERS:
-       text = "Available Commands:\n\n.spam\n.delayspam\n.bigspam\n.raid\n.replyraid"
+       text = "𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀\n\n𝙐𝙩𝙞𝙡𝙨 𝘾𝙤𝙢𝙢𝙖𝙣𝙙:\n.ping\n.restart\n\n𝙐𝙨𝙚𝙧𝙗𝙤𝙩 𝘾𝙤𝙢𝙢𝙖𝙣𝙙:\n.bio\n.join\n.pjoin\n.leave\n\n𝙎𝙥𝙖𝙢 𝘾𝙤𝙢𝙢𝙖𝙣𝙙:\n.spam\n.delayspam\n.bigspam\n.raid\n.replyraid\n.dreplyraid\n\n\nFor more help regarding usage of plugins type plugins name"
        await e.reply(text, parse_mode=None, link_preview=None )
 
         
@@ -736,7 +835,7 @@ async def help(e):
         
         
 print("Started sucessfully")
-print(SMEX_USERS)    
+
 if len(sys.argv) not in (1, 3, 4):
     try:
         idk.disconnect()
@@ -758,6 +857,26 @@ if len(sys.argv) not in (1, 3, 4):
         sdk.disconnect()
     except Exception as e:
         pass
+    try:
+        adk.disconnect()
+    except Exception as e:
+        pass
+    try:
+        bdk.disconnect()
+    except Exception as e:
+        pass
+    try:
+        cdk.disconnect()
+    except Exception as e:
+        pass
+    try:
+        edk.disconnect()
+    except Exception as e:
+        pass
+    try:
+        ddk.disconnect()
+    except Exception as e:
+        pass
 else:
     try:
         idk.run_until_disconnected()
@@ -777,5 +896,25 @@ else:
         pass
     try:
         sdk.run_until_disconnected()
+    except Exception as e:
+        pass
+    try:
+        adk.run_until_disconnected()
+    except Exception as e:
+        pass
+    try:
+        bdk.run_until_disconnected()
+    except Exception as e:
+        pass
+    try:
+        cdk.run_until_disconnected()
+    except Exception as e:
+        pass
+    try:
+        edk.run_until_disconnected()
+    except Exception as e:
+        pass
+    try:
+        ddk.run_until_disconnected()
     except Exception as e:
         pass
