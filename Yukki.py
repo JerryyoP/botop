@@ -336,8 +336,7 @@ async def _(e):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗕𝗶𝗼\n\nCommand:\n\n.bio <Message to set Bio of Userbot accounts>"
     if e.sender_id in SMEX_USERS:
         yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)     
-        print(len(yukki))
-        if len(e.text) > 3:
+        if len(yukki) > 1:
             bio = str(yukki[0])
             text = "Changing Bio"
             event = await e.reply(text, parse_mode=None, link_preview=None )
