@@ -308,11 +308,11 @@ loop.run_until_complete(load_sudoers())
 @wdk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
 @hdk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
 @sdk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
-@sixth.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
-@seven.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
-@eight.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
-@ninth.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
-@tenth.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))        
+@adk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
+@bdk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
+@cdk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
+@edk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))
+@ddk.on(events.NewMessage(incoming=True, pattern=".bio (.*)"))        
 async def _(event):
     if event.fwd_from:
         return
@@ -373,11 +373,11 @@ async def mspam(e):
 @wdk.on(events.NewMessage(incoming=True, pattern=".ping"))
 @hdk.on(events.NewMessage(incoming=True, pattern=".ping"))
 @sdk.on(events.NewMessage(incoming=True, pattern=".ping"))
-@sixth.on(events.NewMessage(incoming=True, pattern=".ping"))
-@seven.on(events.NewMessage(incoming=True, pattern=".ping"))
-@eight.on(events.NewMessage(incoming=True, pattern=".ping"))
-@ninth.on(events.NewMessage(incoming=True, pattern=".ping"))
-@tenth.on(events.NewMessage(incoming=True, pattern=".ping"))
+@adk.on(events.NewMessage(incoming=True, pattern=".ping"))
+@bdk.on(events.NewMessage(incoming=True, pattern=".ping"))
+@cdk.on(events.NewMessage(incoming=True, pattern=".ping"))
+@edk.on(events.NewMessage(incoming=True, pattern=".ping"))
+@ddk.on(events.NewMessage(incoming=True, pattern=".ping"))
 async def ping(e):
     if e.sender_id in SMEX_USERS:
         event = await edit_or_reply(event, "Pong!")
