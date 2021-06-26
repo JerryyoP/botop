@@ -9,6 +9,7 @@ from Config import STRING, SUDO, BIO_MESSAGE, API_ID, API_HASH, STRING2, STRING3
 import asyncio
 import telethon.utils
 from telethon.tl import functions
+from Utils import RAID
 a = API_ID
 b = API_HASH
 smex = STRING
@@ -463,44 +464,64 @@ async def spam(e):
                 async with e.client.action(e.chat_id, "document"):
                     smex = await e.client.send_file(e.chat_id, smex, caption=smex.text)
                     await gifspam(e, smex) 
-                await asyncio.sleep(0.7)  
+                await asyncio.sleep(0.3)  
         elif e.reply_to_msg_id and smex.text:
             message = smex.text
             counter = int(yukki[0])
             for _ in range(counter):
                 async with e.client.action(e.chat_id, "typing"):
                     await e.client.send_message(e.chat_id, message)
-                    await asyncio.sleep(0.7)
+                    await asyncio.sleep(0.3)
         else:
             await e.reply(usage, parse_mode=None, link_preview=None )
 
 
-
-
-
-
-
-
-async def dspam(e):
-    if e.sender_id in SUDO:
-        input_str = "".join(e.text.split(maxsplit=1)[1:])
-        spamDelay = float(input_str.split(" ", 2)[0])
-        counter = int(input_str.split(" ", 2)[1])
-        spam_message = str(input_str.split(" ", 2)[2])
-        for _ in range(counter):
-            await e.respond(spam_message)
-            await asyncio.sleep(spamDelay)
-
-
-@idk.on(events.NewMessage(incoming=True, pattern=".mspam"))
-async def mspam(e):
-    if e.sender_id in SUDO:
-        input_str = "".join(e.text.split(maxsplit=1)[1:])
-        counter = int(input_str.split(" ", 2)[0])
-        reply_message = await e.get_reply_message()
-        bro = reply_message.media
-        for i in range(1, counter):
-            await e.client.send_file(e.chat_id, bro)
+@idk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
+@ydk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
+@wdk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
+@hdk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
+@sdk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
+@adk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
+@bdk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
+@cdk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
+@edk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
+@ddk.on(events.NewMessage(incoming=True, pattern=".raid (.*)"))
+async def spam(e):
+    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗮𝗶𝗱\nCommand:\n\n.raid <count> <Username of User>\n\n.raid <count> <reply to a User>\n\nCount must be a integer."
+    if e.sender_id in SMEX_USERS:
+        if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
+            return await e.reply(usage, parse_mode=None, link_preview=None )
+        yukki = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+        smex = await e.get_reply_message()
+        if len(yukki) == 2:
+            message = str(yukki[1])
+            usern = random.choice(message)
+            a = await event.client.get_entity(usern)
+            e = a.id
+            c = a.first_name
+            username = f"[{c}](tg://user?id={e})"
+            counter = int(yukki[0])
+            for _ in range(counter):
+                reply = random.choice(RAID)
+                caption = f"{username} {reply}"
+                async with e.client.action(e.chat_id, "typing"):
+                    await e.client.send_message(e.chat_id, caption)
+                    await asyncio.sleep(sleeptimem)
+        elif e.reply_to_msg_id             
+            a = await event.get_reply_message()
+            b = await event.client.get_entity(a.sender_id)
+            e = b.id
+            c = b.first_name
+            counter = int(yukki[0])
+            username = f"[{c}](tg://user?id={e})"
+            for _ in range(counter):
+                reply = random.choice(U.RAID)
+                caption = f"{username} {reply}"
+                async with e.client.action(e.chat_id, "typing"):
+                    await e.client.send_message(e.chat_id, caption)
+                    await asyncio.sleep(0.3)
+        else:
+            await e.reply(usage, parse_mode=None, link_preview=None )
 
 
 
