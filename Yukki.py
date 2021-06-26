@@ -320,7 +320,8 @@ async def _(event):
         return
     bio = event.pattern_match.group(1)
     await event.delete()
-    event = await edit_or_reply(event, "Trying")
+    text = "Changing Bio"
+    event = await e.reply(text, parse_mode=None, link_preview=None )
     try:
         await event.client(functions.account.UpdateProfileRequest(about=bio))
         await event.edit("Succesfully Changed Bio")
