@@ -497,7 +497,7 @@ async def spam(e):
         if len(yukki) == 2:
             message = str(yukki[1])
             usern = random.choice(message)
-            a = await event.client.get_entity(usern)
+            a = await e.client.get_entity(usern)
             e = a.id
             c = a.first_name
             username = f"[{c}](tg://user?id={e})"
@@ -509,8 +509,8 @@ async def spam(e):
                     await e.client.send_message(e.chat_id, caption)
                     await asyncio.sleep(sleeptimem)
         elif e.reply_to_msg_id:             
-            a = await event.get_reply_message()
-            b = await event.client.get_entity(a.sender_id)
+            a = await e.get_reply_message()
+            b = await e.client.get_entity(a.sender_id)
             e = b.id
             c = b.first_name
             counter = int(yukki[0])
